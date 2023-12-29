@@ -33,7 +33,7 @@
     <ImageView
         android:layout_width="35dp"
         android:layout_height="35dp"
-        android:layout_marginStart="320dp"
+        android:layout_marginStart="275dp"
         android:layout_centerVertical="true"
         android:layout_marginEnd="300dp"
         android:padding="4dp"
@@ -42,7 +42,7 @@
     <androidx.constraintlayout.utils.widget.ImageFilterView
         android:layout_width="35dp"
         android:layout_height="35dp"
-        android:layout_marginStart="360dp"
+        android:layout_marginStart="315dp"
         android:layout_centerVertical="true"
         android:layout_marginEnd="300dp"
         android:padding="4dp"

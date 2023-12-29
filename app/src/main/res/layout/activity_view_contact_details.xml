@@ -40,9 +40,8 @@
         android:id="@+id/idIVCall"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_marginStart="65dp"
+        android:layout_marginStart="35dp"
         android:layout_marginTop="400dp"
-        android:layout_marginEnd="300dp"
         android:padding="4dp"
         android:src="@mipmap/call_icon_round" />
 
@@ -50,7 +49,7 @@
         android:id="@+id/idIVVideo"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_marginStart="140dp"
+        android:layout_marginStart="115dp"
         android:layout_marginTop="400dp"
         android:layout_marginEnd="300dp"
         android:padding="4dp"
@@ -60,7 +59,7 @@
         android:id="@+id/idIVMessage"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_marginStart="225dp"
+        android:layout_marginStart="190dp"
         android:layout_marginTop="400dp"
         android:layout_marginEnd="300dp"
         android:padding="4dp"
@@ -70,9 +69,8 @@
         android:id="@+id/idIVMail"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_marginStart="305dp"
+        android:layout_marginStart="270dp"
         android:layout_marginTop="400dp"
-        android:layout_marginEnd="300dp"
         android:padding="4dp"
         android:src="@mipmap/email_icon_round" />
 
