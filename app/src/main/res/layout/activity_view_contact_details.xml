@@ -4,73 +4,76 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#2E2C2C"
     tools:context=".ViewContactDetails">
 
     <androidx.constraintlayout.utils.widget.ImageFilterView
         android:id="@+id/idIVContact"
         android:layout_width="match_parent"
         android:layout_height="300dp"
-        android:background="#673AB7"
-        android:padding="50dp"
-        android:src="@drawable/baseline_account_box_24"
-        app:tint="@color/white" />
+        android:padding="5dp"
+        android:src="@drawable/baseline_account_circle_24"
+ />
 
     <TextView
         android:id="@+id/idTVName"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/idIVContact"
-        android:padding="8dp"
+        android:layout_centerHorizontal="true"
         android:text="Name"
-        android:textColor="@color/black"
-        android:textSize="18sp" />
+        android:textColor="@color/white"
+        android:textSize="24sp" />
 
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/idTVPhone"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
         android:layout_below="@id/idTVName"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="4dp"
-        app:cardCornerRadius="4dp"
-        app:cardElevation="4dp">
+        android:paddingTop="7dp"
+        android:text="Phone Number"
+        android:textColor="@color/white"
+        android:textSize="16sp" />
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <!--image view for making a call -->
-            <ImageView
-                android:id="@+id/idIVCall"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_margin="8dp"
-                android:padding="4dp"
-                android:src="@drawable/baseline_call_24" />
-            <!--text view for displaying user contact-->
-            <TextView
-                android:id="@+id/idTVPhone"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:layout_marginStart="3dp"
-                android:layout_marginTop="8dp"
-                android:layout_toStartOf="@id/idIVMessage"
-                android:layout_toEndOf="@id/idIVCall"
-                android:layout_toRightOf="@id/idIVCall"
-                android:text="Phone Number" />
+    <ImageView
+        android:id="@+id/idIVCall"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="65dp"
+        android:layout_marginTop="400dp"
+        android:layout_marginEnd="300dp"
+        android:padding="4dp"
+        android:src="@mipmap/call_icon_round" />
 
-            <!--image view for displaying message icon-->
-            <ImageView
-                android:id="@+id/idIVMessage"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_alignParentEnd="true"
-                android:layout_margin="8dp"
-                android:padding="4dp"
-                android:src="@drawable/baseline_message_24" />
+    <ImageView
+        android:id="@+id/idIVVideo"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="140dp"
+        android:layout_marginTop="400dp"
+        android:layout_marginEnd="300dp"
+        android:padding="4dp"
+        android:src="@mipmap/video_icon_round" />
 
-        </RelativeLayout>
+    <ImageView
+        android:id="@+id/idIVMessage"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="225dp"
+        android:layout_marginTop="400dp"
+        android:layout_marginEnd="300dp"
+        android:padding="4dp"
+        android:src="@mipmap/message_icon_round" />
 
-    </androidx.cardview.widget.CardView>
+    <ImageView
+        android:id="@+id/idIVMail"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="305dp"
+        android:layout_marginTop="400dp"
+        android:layout_marginEnd="300dp"
+        android:padding="4dp"
+        android:src="@mipmap/email_icon_round" />
 
 </RelativeLayout>

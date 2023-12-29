@@ -7,14 +7,14 @@
     <!--image view for displaying the first letter of contact-->
     <ImageView
         android:id="@+id/idIVContact"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="4dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="4dp"
         android:padding="3dp"
-        android:src="@drawable/baseline_person_24" />
+        android:src="@drawable/list_account_circle" />
 
     <!--text view for displaying user name-->
     <TextView
@@ -22,11 +22,30 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="5dp"
         android:layout_marginTop="12dp"
         android:layout_marginEnd="8dp"
         android:layout_toRightOf="@id/idIVContact"
         android:text="Contact Name"
-        android:textColor="@color/black" />
+        android:textColor="@color/white"
+        android:textSize="20sp" />
+
+    <ImageView
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="320dp"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="300dp"
+        android:padding="4dp"
+        android:src="@drawable/gray_call" />
+
+    <androidx.constraintlayout.utils.widget.ImageFilterView
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="360dp"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="300dp"
+        android:padding="4dp"
+        android:src="@drawable/gray_message" />
 
 </RelativeLayout>
