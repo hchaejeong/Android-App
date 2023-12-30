@@ -2,7 +2,6 @@ package com.example.myapplication.fragments;
 
 import android.content.pm.PackageManager;
 import android.database.Cursor;
-import android.os.Build;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -30,23 +29,11 @@ public class GalleryFragment extends Fragment {
 
     private ArrayList<String> imagePaths;
     private RecyclerView imagesRV;
-    private GalleryAdapter galleryAdapter;
 
     public GalleryFragment() {
         // Required empty public constructor
     }
 
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        if (requestCode == 200) {
-            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                getImagePath();
-            }
-            else {
-                Toast.makeText(requireContext(), "Permission Denied.", Toast.LENGTH_SHORT).show();
-            }
-        }
-    }
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -61,23 +48,15 @@ public class GalleryFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         imagePaths = new ArrayList<>();
         requestPermissions();
-        prepareRecyclerView();
     }
 
     private void requestPermissions() {
         int permissionResult = ContextCompat.checkSelfPermission(requireContext(), READ_EXTERNAL_STORAGE);
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && permissionResult != PackageManager.PERMISSION_GRANTED) {
+        if (permissionResult != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(requireActivity(), new String[]{READ_EXTERNAL_STORAGE}, 200);
         } else {
             getImagePath();
         }
-    }
-
-    private void prepareRecyclerView() {
-        galleryAdapter = new GalleryAdapter(requireContext(), imagePaths);
-        GridLayoutManager manager = new GridLayoutManager(requireContext(), 4);
-        imagesRV.setLayoutManager(manager);
-        imagesRV.setAdapter(galleryAdapter);
     }
 
     public void getImagePath() {
@@ -89,14 +68,30 @@ public class GalleryFragment extends Fragment {
 
             Cursor cursor = requireContext().getContentResolver().query(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, columns, null, null, orderBy);
 
-            int count = cursor.getCount();
-            for (int i = 0; i < count; i++) {
-                cursor.moveToPosition(i);
+            if (cursor != null && cursor.getCount() > 0) {
                 int dataColumnIndex = cursor.getColumnIndex(MediaStore.Images.Media.DATA);
-                imagePaths.add(cursor.getString(dataColumnIndex));
+                while (cursor.moveToNext()) {
+                    imagePaths.add(cursor.getString(dataColumnIndex));
+                }
+
+                GalleryAdapter myAdapter = new GalleryAdapter(requireContext(), imagePaths);
+                GridLayoutManager manager = new GridLayoutManager(requireContext(), 4);
+                imagesRV.setLayoutManager(manager);
+                imagesRV.setAdapter(myAdapter);
+                myAdapter.notifyDataSetChanged();
             }
-            galleryAdapter.notifyDataSetChanged();
-            cursor.close();
+        }
+    }
+
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if (requestCode == 200) {
+            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                getImagePath();
+            }
+            else {
+                Toast.makeText(requireContext(), "Permission Denied.", Toast.LENGTH_SHORT).show();
+            }
         }
     }
 }

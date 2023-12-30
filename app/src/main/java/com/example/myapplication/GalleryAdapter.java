@@ -32,10 +32,9 @@ public class GalleryAdapter extends RecyclerView.Adapter<GalleryAdapter.ImagesVi
 
     @Override
     public void onBindViewHolder(@NonNull ImagesViewHolder holder, int position) {
-
         // on below line we are getting the file from the
         // path which we have stored in our list.
-        File imgFile = new File(imagePathArrayList.get(position));
+        File imgFile = new File(imagePathArrayList.get(holder.getAdapterPosition()));
 
         // on below line we are checking if the file exists or not.
         if (imgFile.exists()) {
@@ -50,7 +49,7 @@ public class GalleryAdapter extends RecyclerView.Adapter<GalleryAdapter.ImagesVi
                     // inside on click listener we are creating a new intent
                     Intent i = new Intent(context, ImageDetailActivity.class);
                     // on below line we are passing the image path to our new activity.
-                    i.putExtra("imgPath", imagePathArrayList.get(position));
+                    i.putExtra("imgPath", imagePathArrayList.get(holder.getAdapterPosition()));
                     context.startActivity(i);
                 }
             });

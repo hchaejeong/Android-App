@@ -16,7 +16,6 @@ import com.example.myapplication.R;
 import android.Manifest;
 import android.content.Intent;
 import android.database.Cursor;
-import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.widget.Toast;
 
@@ -33,11 +32,6 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link ContactsFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class ContactsFragment extends Fragment {
     private ArrayList<ContactsModule> contactsList;
     RecyclerView recyclerView;
@@ -89,8 +83,6 @@ public class ContactsFragment extends Fragment {
 
 
     private void loadContacts() {
-        String contactId = "";
-        String displayName = "";
         Cursor cursor = requireContext().getContentResolver().query(ContactsContract.Contacts.CONTENT_URI, null, null, null, ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME + " ASC");
         if (cursor != null && cursor.getCount() > 0) {
             int hasPhoneNumberIndex = cursor.getColumnIndex(ContactsContract.Contacts.HAS_PHONE_NUMBER);
@@ -100,8 +92,8 @@ public class ContactsFragment extends Fragment {
                 int hasPhoneNumber = Integer.parseInt(cursor.getString(hasPhoneNumberIndex));
                 //the phone number should be longer than 0
                 if (hasPhoneNumber > 0) {
-                    contactId = cursor.getString(contactIdIndex);
-                    displayName = cursor.getString(displayNameIndex);
+                    String contactId = cursor.getString(contactIdIndex);
+                    String displayName = cursor.getString(displayNameIndex);
                     Cursor phoneCursor = requireContext().getContentResolver().query(
                             ContactsContract.CommonDataKinds.Phone.CONTENT_URI,
                             null,
