@@ -35,14 +35,6 @@ public class Tap3_ResultPage extends AppCompatActivity{
         j = intent.getIntExtra("j_count",0);
         p = intent.getIntExtra("p_count",0);
 
-        Button before = findViewById(R.id.before);
-        before.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent (getApplicationContext(), Tap3_Page4.class);
-                startActivity(intent);
-            }
-        });
 
         Button res_btn = findViewById(R.id.result_btn);
         res_btn.setOnClickListener(new View.OnClickListener(){

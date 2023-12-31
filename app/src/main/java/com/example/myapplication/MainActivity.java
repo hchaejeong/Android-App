@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
         getSupportFragmentManager().beginTransaction().replace(R.id.container, contactsFragment).commit();
 
+
         // mbti에서 돌아왔을때 tab3로 가기 위한 장치(추가한 부분)
         String fragmentTag1 = getIntent().getStringExtra("fragmentTag");
         if (fragmentTag1 != null && !fragmentTag1.isEmpty()) {
