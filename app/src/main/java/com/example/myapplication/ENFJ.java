@@ -8,7 +8,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.myapplication.fragments.PresentAdvisorFragment;
+
 public class ENFJ extends AppCompatActivity{
+
+    PresentAdvisorFragment presentAdvisorFragment = new PresentAdvisorFragment();
 
 
     @Override
@@ -22,9 +26,9 @@ public class ENFJ extends AppCompatActivity{
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent (getApplicationContext(),MainActivity.class);
+                intent.putExtra("fragmentTag","yourFragmentTag");
                 startActivity(intent);
             }
         });
-
     }
 }

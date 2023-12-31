@@ -8,6 +8,8 @@ import androidx.annotation.NonNull;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.example.myapplication.fragments.ContactsFragment;
 import com.example.myapplication.fragments.GalleryFragment;
@@ -27,6 +29,12 @@ public class MainActivity extends AppCompatActivity {
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
         getSupportFragmentManager().beginTransaction().replace(R.id.container, contactsFragment).commit();
 
+        // mbti에서 돌아왔을때 tab3로 가기 위한 장치(추가한 부분)
+        String fragmentTag1 = getIntent().getStringExtra("fragmentTag");
+        if (fragmentTag1 != null && !fragmentTag1.isEmpty()) {
+            getSupportFragmentManager().beginTransaction().replace(R.id.container, presentAdvisorFragment).commit();
+        }
+
         bottomNavigationView.setOnItemSelectedListener(item -> {
                 if (item.getItemId() == R.id.contacts) {
                     getSupportFragmentManager().beginTransaction().replace(R.id.container, contactsFragment).commit();
@@ -35,10 +43,8 @@ public class MainActivity extends AppCompatActivity {
                 } else if (item.getItemId() == R.id.present_advisor) {
                     getSupportFragmentManager().beginTransaction().replace(R.id.container, presentAdvisorFragment).commit();
                 }
-
                 return true;
         });
-
     }
 
     @Override

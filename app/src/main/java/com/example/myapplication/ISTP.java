@@ -22,6 +22,7 @@ public class ISTP extends AppCompatActivity{
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent (getApplicationContext(),MainActivity.class);
+                intent.putExtra("fragmentTag","yourFragmentTag");
                 startActivity(intent);
             }
         });
