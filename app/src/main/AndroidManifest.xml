@@ -36,6 +36,47 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".Tap3_Page1"
+            android:exported="false"
+            android:parentActivityName=".MainActivity"/>
+        <activity
+            android:name=".Tap3_Page2"
+            android:exported="false"
+            android:parentActivityName=".Tap3_Page1"/>
+        <activity
+            android:name=".Tap3_Page3"
+            android:exported="false"
+            android:parentActivityName=".Tap3_Page2"/>
+        <activity
+            android:name=".Tap3_Page4"
+            android:exported="false"
+            android:parentActivityName=".Tap3_Page3"/>
+        <activity
+            android:name=".Tap3_ResultPage"
+            android:exported="false"
+            android:parentActivityName=".Tap3_Page4"/>
+
+        <activity android:name=".ENFJ" />
+        <activity android:name=".ENFP" />
+        <activity android:name=".ENTJ" />
+        <activity android:name=".ENTP" />
+
+        <activity android:name=".ESFJ" />
+        <activity android:name=".ESFP" />
+        <activity android:name=".ESTJ" />
+        <activity android:name=".ESTP" />
+
+        <activity android:name=".INFJ" />
+        <activity android:name=".INFP" />
+        <activity android:name=".INTJ" />
+        <activity android:name=".INTP" />
+
+        <activity android:name=".ISFJ" />
+        <activity android:name=".ISFP" />
+        <activity android:name=".ISTJ" />
+        <activity android:name=".ISTP" />
     </application>
 
 </manifest>
