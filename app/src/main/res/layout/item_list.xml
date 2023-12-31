@@ -33,16 +33,16 @@
     <ImageView
         android:layout_width="35dp"
         android:layout_height="35dp"
-        android:layout_marginStart="245dp"
+        android:layout_marginStart="235dp"
         android:layout_centerVertical="true"
         android:layout_marginEnd="300dp"
         android:padding="4dp"
-        android:src="@drawable/gray_call" />
+        android:src="@drawable/baseline_call_24" />
 
     <ImageView
         android:layout_width="35dp"
         android:layout_height="35dp"
-        android:layout_marginStart="285dp"
+        android:layout_marginStart="275dp"
         android:layout_centerVertical="true"
         android:layout_marginEnd="300dp"
         android:padding="4dp"
