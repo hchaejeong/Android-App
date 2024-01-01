@@ -103,6 +103,8 @@ public class ContactsAdapter extends RecyclerView.Adapter<ContactsAdapter.Contac
                 ContactsModule contactToDelete = contactsArrayList.get(position);
                 removeContact(contactToDelete);
                 notifyItemRemoved(position);
+                notifyItemRangeRemoved(position, contactsArrayList.size() - position);
+
             } else {
                 Log.e("ContactsAdapter", "Invalid position: " + position);
             }
