@@ -1,10 +1,17 @@
 package com.example.myapplication;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
+import android.Manifest;
 import android.app.Activity;
+import android.content.ContentProviderOperation;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.os.Build;
 import android.provider.ContactsContract;
 import android.view.View;
 import android.widget.Button;
@@ -13,6 +20,8 @@ import android.text.TextUtils;
 import android.widget.Toast;
 
 import android.os.Bundle;
+
+import java.util.ArrayList;
 
 public class CreateNewContactActivity extends AppCompatActivity {
     private EditText nameEdt, phoneEdt;
@@ -42,32 +51,82 @@ public class CreateNewContactActivity extends AppCompatActivity {
         });
     }
 
+    private boolean checkPermissionsAndData(String name, String phone) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_CONTACTS) != PackageManager.PERMISSION_GRANTED ||
+                    ContextCompat.checkSelfPermission(this, Manifest.permission.READ_CONTACTS) != PackageManager.PERMISSION_GRANTED) {
+                ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_CONTACTS, Manifest.permission.WRITE_CONTACTS}, 102);
+                return false;
+            }
+        }
+        if (TextUtils.isEmpty(name) || TextUtils.isEmpty(phone)) {
+            Toast.makeText(this, "Please enter valid data in all fields", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        return true;
+    }
+
     private void addContact(String name, String phone) {
-        //in this method we are calling an intent and passing data to that intent for adding a new contact.
+        ArrayList<ContentProviderOperation> contacts = new ArrayList<>();
+        int contactIndex = contacts.size();
+
+        contacts.add(ContentProviderOperation.newInsert(ContactsContract.RawContacts.CONTENT_URI).
+                withValue(ContactsContract.RawContacts.ACCOUNT_TYPE, null).
+                withValue(ContactsContract.RawContacts.ACCOUNT_NAME, null).
+                build());
+
+        if (name!= null && !name.trim().equals("")) {
+            contacts.add(ContentProviderOperation.newInsert(ContactsContract.Data.CONTENT_URI).
+                withValueBackReference(ContactsContract.Data.RAW_CONTACT_ID, contactIndex).
+                withValue(ContactsContract.Data.MIMETYPE, ContactsContract.CommonDataKinds.StructuredName.CONTENT_ITEM_TYPE).
+                withValue(ContactsContract.CommonDataKinds.StructuredName.DISPLAY_NAME, name).
+                build());
+        }
+        if (phone!= null && !phone.trim().equals("")) {
+            contacts.add(ContentProviderOperation.newInsert(ContactsContract.Data.CONTENT_URI).
+                    withValueBackReference(ContactsContract.Data.RAW_CONTACT_ID, contactIndex).
+                    withValue(ContactsContract.Data.MIMETYPE, ContactsContract.CommonDataKinds.Phone.CONTENT_ITEM_TYPE).
+                    withValue(ContactsContract.CommonDataKinds.Phone.NUMBER, phone).
+                    withValue(ContactsContract.CommonDataKinds.Phone.TYPE, ContactsContract.CommonDataKinds.Phone.TYPE_MOBILE).
+                    build());
+        }
+
+        if(contacts.size() > 0) {
+            try {
+                getContentResolver().applyBatch(ContactsContract.AUTHORITY, contacts);
+                Toast.makeText(this, "Contact has been added.", Toast.LENGTH_SHORT).show();
+                Intent i = new Intent(CreateNewContactActivity.this, MainActivity.class);
+                startActivity(i);
+                finish();
+            } catch (Exception e) {
+                e.printStackTrace();
+                Toast.makeText(this, "Error adding contact.", Toast.LENGTH_SHORT).show();
+            }
+        }
+
+        /*
         Intent contactIntent = new Intent(ContactsContract.Intents.Insert.ACTION);
         contactIntent.setType(ContactsContract.RawContacts.CONTENT_TYPE);
         contactIntent
                 .putExtra(ContactsContract.Intents.Insert.NAME, name)
                 .putExtra(ContactsContract.Intents.Insert.PHONE, phone);
         startActivityForResult(contactIntent, 1);
+        */
     }
 
     @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        //in on activity result method.
-        if (requestCode == 1) {
-            //we are checking if the request code is 1
-            if (resultCode == Activity.RESULT_OK) {
-                //if the result is ok we are displaying a toast message.
-                Toast.makeText(this, "Contact has been added.", Toast.LENGTH_SHORT).show();
-                Intent i = new Intent(CreateNewContactActivity.this, MainActivity.class);
-                startActivity(i);
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if (requestCode == 102) {
+            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED && grantResults[1] == PackageManager.PERMISSION_GRANTED) {
+                String name = nameEdt.getText().toString();
+                String phone = phoneEdt.getText().toString();
+                if(checkPermissionsAndData(name, phone)) {
+                    addContact(name, phone);
+                }
             }
-            //else we are displaying a message as contact addition has cancelled.
-            if (resultCode == Activity.RESULT_CANCELED) {
-                Toast.makeText(this, "Cancelled Added Contact",
-                        Toast.LENGTH_SHORT).show();
+            else {
+                Toast.makeText(this, "Permission Denied.", Toast.LENGTH_SHORT).show();
             }
         }
     }

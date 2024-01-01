@@ -9,7 +9,36 @@
     <ImageView
         android:id="@+id/idIVImage"
         android:layout_width="match_parent"
-        android:layout_height="300dp"
+        android:layout_height="match_parent"
+        android:scaleType="fitCenter"
         android:layout_centerInParent="true" />
+
+    <Button
+        android:id="@+id/btnMakeBlackWhite"
+        android:layout_width="50dp"
+        android:layout_height="45dp"
+        android:layout_alignParentTop="true"
+        android:layout_toLeftOf="@id/btnMakeColor"
+        android:drawableTop="@drawable/baseline_contrast_24" />
+
+    <Button
+        android:id="@+id/btnMakeColor"
+        android:layout_width="50dp"
+        android:layout_height="45dp"
+        android:layout_toLeftOf="@id/btnMakeBright"
+        android:layout_marginLeft="5dp"
+        android:layout_alignParentTop="true"
+        android:drawableTop="@drawable/baseline_palette_24" />
+
+    <Button
+        android:id="@+id/btnMakeBright"
+        android:layout_width="50dp"
+        android:layout_height="45dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_centerHorizontal="true"
+        android:drawableTop="@drawable/baseline_brightness_high_24" />
 
 </RelativeLayout>

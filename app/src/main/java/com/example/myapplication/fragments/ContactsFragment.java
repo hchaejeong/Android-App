@@ -1,7 +1,5 @@
 package com.example.myapplication.fragments;
 
-import android.content.res.ColorStateList;
-import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
@@ -28,7 +26,6 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.provider.ContactsContract;
 import android.widget.EditText;
-import android.widget.Filter;
 import android.widget.Toast;
 
 import android.content.pm.PackageManager;
@@ -71,7 +68,7 @@ public class ContactsFragment extends Fragment {
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(requireContext()));
 
-        myAdapter = new ContactsAdapter(requireContext(), contactsList);
+        myAdapter = new ContactsAdapter(requireContext(), contactsList, recyclerView);
         recyclerView.setAdapter(myAdapter);
 
         Log.d("CreateView", "Create view is called");
@@ -108,8 +105,16 @@ public class ContactsFragment extends Fragment {
             }
         });
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && ContextCompat.checkSelfPermission(requireContext(), Manifest.permission.READ_CONTACTS) != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(requireActivity(), new String[]{Manifest.permission.READ_CONTACTS}, 100);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            if (ContextCompat.checkSelfPermission(requireContext(), Manifest.permission.READ_CONTACTS) != PackageManager.PERMISSION_GRANTED) {
+                ActivityCompat.requestPermissions(requireActivity(), new String[]{Manifest.permission.READ_CONTACTS}, 100);
+            } else {
+                if (ContextCompat.checkSelfPermission(requireContext(), Manifest.permission.WRITE_CONTACTS) != PackageManager.PERMISSION_GRANTED) {
+                    ActivityCompat.requestPermissions(requireActivity(), new String[]{Manifest.permission.WRITE_CONTACTS}, 101);
+                } else {
+                    loadContacts();
+                }
+            }
         } else {
             loadContacts();
         }
@@ -123,6 +128,8 @@ public class ContactsFragment extends Fragment {
                 startActivity(i);
             }
         });
+
+        myAdapter.setSwipeToDelete();
 
         return rootView;
     }
@@ -188,26 +195,26 @@ public class ContactsFragment extends Fragment {
                 int hasPhoneNumber = Integer.parseInt(cursor.getString(hasPhoneNumberIndex));
                 //the phone number should be longer than 0
                 if (hasPhoneNumber > 0) {
-                    String contactId = cursor.getString(contactIdIndex);
+                    int contactId = Integer.parseInt(cursor.getString(contactIdIndex));
                     String displayName = cursor.getString(displayNameIndex);
                     Cursor phoneCursor = requireContext().getContentResolver().query(
                             ContactsContract.CommonDataKinds.Phone.CONTENT_URI,
                             null,
                             ContactsContract.CommonDataKinds.Phone.CONTACT_ID + " =?",
-                            new String[]{contactId},
+                            new String[]{String.valueOf(contactId)},
                             null
                     );
 
                     if (phoneCursor != null && phoneCursor.moveToNext()) {
                         int phoneNumberIndex = phoneCursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER);
                         String phoneNumber = phoneCursor.getString(phoneNumberIndex);
-                        ContactsModule myContact = new ContactsModule(displayName, phoneNumber);
+                        ContactsModule myContact = new ContactsModule(contactId, displayName, phoneNumber);
                         contactsList.add(myContact);
                     }
                     phoneCursor.close();
                 }
             }
-            myAdapter = new ContactsAdapter(requireContext(), contactsList);
+            myAdapter = new ContactsAdapter(requireContext(), contactsList, recyclerView);
             recyclerView.setAdapter(myAdapter);
             myAdapter.notifyDataSetChanged();
         }
