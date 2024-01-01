@@ -129,6 +129,8 @@ public class ContactsFragment extends Fragment {
             }
         });
 
+        myAdapter.setSwipeToDelete();
+
         return rootView;
     }
 

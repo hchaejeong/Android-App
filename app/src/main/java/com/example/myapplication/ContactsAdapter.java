@@ -16,6 +16,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -24,6 +25,8 @@ import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.material.snackbar.Snackbar;
+
 import java.util.ArrayList;
 
 public class ContactsAdapter extends RecyclerView.Adapter<ContactsAdapter.ContactsViewHolder> {
@@ -31,15 +34,12 @@ public class ContactsAdapter extends RecyclerView.Adapter<ContactsAdapter.Contac
     private Context context;
     private ArrayList<ContactsModule> contactsArrayList;
     private RecyclerView recyclerView;
-    private ItemTouchHelper itemTouchHelper;
 
     //creating a constructor.
     public ContactsAdapter(Context context, ArrayList<ContactsModule> arrayList, RecyclerView recyclerView) {
         this.context = context;
         this.contactsArrayList = arrayList;
         this.recyclerView = recyclerView;
-        itemTouchHelper = new ItemTouchHelper(touchHelperCallback);
-        itemTouchHelper.attachToRecyclerView(recyclerView);
     }
 
     @Override
@@ -54,12 +54,12 @@ public class ContactsAdapter extends RecyclerView.Adapter<ContactsAdapter.Contac
         Log.d("Adapter", "Dataset filtered, new size: " + getItemCount());
     }
 
-    public void removeContact(ContactsModule contact) {
+    //public void restoreContacts(String )
+
+    private void removeContact(ContactsModule contact) {
         int position = contactsArrayList.indexOf(contact);
         contactsArrayList.remove(position);
         notifyItemRemoved(position);
-        notifyItemRangeChanged(position, contactsArrayList.size());
-        notifyItemChanged(position);
 
         removeContactFromDevice(contact);
     }
@@ -82,6 +82,55 @@ public class ContactsAdapter extends RecyclerView.Adapter<ContactsAdapter.Contac
         }
     }
 
+    public void setSwipeToDelete() {
+        new ItemTouchHelper(new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.RIGHT) {
+            @Override
+            public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder target) {
+                return false;
+            }
+
+            @Override
+            public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
+                int position = viewHolder.getAdapterPosition();
+                ContactsModule contactsModule = contactsArrayList.get(position);
+                removeContact(contactsModule);
+                notifyItemRemoved(position);
+                notifyItemRangeRemoved(position, getItemCount() - position);
+            }
+
+            @Override
+            public void onChildDraw(@NonNull Canvas c, @NonNull RecyclerView recyclerView,
+                                    @NonNull RecyclerView.ViewHolder viewHolder, float dX, float dY,
+                                    int actionState, boolean isCurrentlyActive) {
+                setDeleteIcon(c, recyclerView, viewHolder, dX, dY, actionState, isCurrentlyActive);
+                super.onChildDraw(c, recyclerView, viewHolder, dX, dY, actionState, isCurrentlyActive);
+            }
+        }).attachToRecyclerView(recyclerView);
+    }
+
+    private void setDeleteIcon(Canvas c, RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder, float dX, float dY, int actionState, boolean isCurrentlyActive) {
+        View itemView = viewHolder.itemView;
+        float width = (float) itemView.getWidth();
+        //float alpha = 1.0f - Math.abs(dX) / width;
+
+        Paint paint = new Paint();
+        paint.setColor(Color.RED);
+        //paint.setAlpha((int) (alpha * 255));
+        c.drawRect((float) itemView.getLeft(), (float) itemView.getTop(), (float) itemView.getLeft() + dX, (float) itemView.getBottom(), paint);
+
+        Drawable deleteIcon = ContextCompat.getDrawable(context, R.drawable.baseline_delete_24);
+        if (deleteIcon != null) {
+            int iconTop = itemView.getTop() + (itemView.getHeight() - deleteIcon.getIntrinsicHeight()) / 2;
+            int iconBottom = iconTop + deleteIcon.getIntrinsicHeight();
+
+            float iconPosition = Math.min(dX / 2, width / 2);
+            int iconLeft = (int) (itemView.getLeft() + iconPosition);
+            int iconRight = iconLeft + deleteIcon.getIntrinsicWidth();
+            deleteIcon.setBounds(iconLeft, iconTop, iconRight, iconBottom);
+            deleteIcon.draw(c);
+        }
+    }
+    /*
     private final ItemTouchHelper.Callback touchHelperCallback = new ItemTouchHelper.Callback() {
         //private static final float SWIPE_THRESHOLD = 0.15f;
         @Override
@@ -103,8 +152,6 @@ public class ContactsAdapter extends RecyclerView.Adapter<ContactsAdapter.Contac
                 ContactsModule contactToDelete = contactsArrayList.get(position);
                 removeContact(contactToDelete);
                 notifyItemRemoved(position);
-                notifyItemRangeRemoved(position, contactsArrayList.size() - position);
-
             } else {
                 Log.e("ContactsAdapter", "Invalid position: " + position);
             }
@@ -112,8 +159,6 @@ public class ContactsAdapter extends RecyclerView.Adapter<ContactsAdapter.Contac
 
         @Override
         public void onChildDraw(@NonNull Canvas c, @NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, float dX, float dY, int actionState, boolean isCurrentlyActive) {
-            super.onChildDraw(c, recyclerView, viewHolder, dX, dY, actionState, isCurrentlyActive);
-
             if (actionState == ItemTouchHelper.ACTION_STATE_SWIPE) {
                 View itemView = viewHolder.itemView;
                 float width = (float) itemView.getWidth();
@@ -136,9 +181,11 @@ public class ContactsAdapter extends RecyclerView.Adapter<ContactsAdapter.Contac
                     deleteIcon.draw(c);
                 }
             }
+            super.onChildDraw(c, recyclerView, viewHolder, dX, dY, actionState, isCurrentlyActive);
         }
     };
 
+     */
 
     @Override
     public void onBindViewHolder(ContactsViewHolder holder, int position) {
@@ -163,8 +210,7 @@ public class ContactsAdapter extends RecyclerView.Adapter<ContactsAdapter.Contac
     public class ContactsViewHolder extends RecyclerView.ViewHolder {
         private ImageView contactImage;
         private TextView contactName;
-        private ImageView deleteContactButton;
-        private LinearLayout deleteLayout;
+
         public ContactsViewHolder(@NonNull View itemView) {
             super(itemView);
             contactImage = itemView.findViewById(R.id.idIVContact);
