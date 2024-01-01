@@ -2,9 +2,12 @@ package com.example.myapplication;
 
 import android.content.Context;
 import android.content.Intent;
+import android.text.Layout;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Filter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -18,17 +21,24 @@ public class ContactsAdapter extends RecyclerView.Adapter<ContactsAdapter.Contac
     //creating variables for context and array list.
     private Context context;
     private ArrayList<ContactsModule> contactsArrayList;
+    LayoutInflater inflater;
 
     //creating a constructor.
-    public ContactsAdapter(Context context, ArrayList<ContactsModule> contactsArrayList) {
+    public ContactsAdapter(Context context, ArrayList<ContactsModule> arrayList) {
         this.context = context;
-        this.contactsArrayList = contactsArrayList;
+        this.contactsArrayList = arrayList;
     }
 
     @Override
     public ContactsViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(context).inflate(R.layout.item_list, parent, false);
         return new ContactsAdapter.ContactsViewHolder(view);
+    }
+
+    public void filterList(ArrayList<ContactsModule> filterList) {
+        contactsArrayList = filterList;
+        notifyDataSetChanged();
+        Log.d("Adapter", "Dataset filtered, new size: " + getItemCount());
     }
 
     @Override

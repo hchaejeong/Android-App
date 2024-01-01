@@ -1,10 +1,20 @@
 package com.example.myapplication.fragments;
 
+import android.content.res.ColorStateList;
+import android.graphics.Color;
 import android.os.Bundle;
 
+import androidx.annotation.Nullable;
+import androidx.appcompat.widget.SearchView;
 import androidx.fragment.app.Fragment;
 
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -16,8 +26,9 @@ import com.example.myapplication.R;
 import android.Manifest;
 import android.content.Intent;
 import android.database.Cursor;
-import android.os.Bundle;
 import android.provider.ContactsContract;
+import android.widget.EditText;
+import android.widget.Filter;
 import android.widget.Toast;
 
 import android.content.pm.PackageManager;
@@ -25,6 +36,7 @@ import android.os.Build;
 import androidx.annotation.NonNull;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
+import androidx.core.view.MenuItemCompat;
 
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -33,17 +45,20 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link ContactsFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class ContactsFragment extends Fragment {
     private ArrayList<ContactsModule> contactsList;
-    RecyclerView recyclerView;
+    private ArrayList<ContactsModule> filterList;
+    private RecyclerView recyclerView;
+    private ContactsAdapter myAdapter;
 
     public ContactsFragment() {
         // Required empty public constructor
+    }
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setHasOptionsMenu(true); // This line is important to enable the options menu
     }
 
     @Override
@@ -51,9 +66,47 @@ public class ContactsFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_contacts, container, false);
 
         contactsList = new ArrayList<>();
+        filterList = new ArrayList<>();
         recyclerView = rootView.findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(requireContext()));
+
+        myAdapter = new ContactsAdapter(requireContext(), contactsList);
+        recyclerView.setAdapter(myAdapter);
+
+        Log.d("CreateView", "Create view is called");
+
+        EditText searchEditText = rootView.findViewById(R.id.editText);
+        searchEditText.setTextColor(getResources().getColor(R.color.white));
+        searchEditText.setHintTextColor(getResources().getColor(R.color.gray));
+        searchEditText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                String searchText = searchEditText.getText().toString();
+                filterList.clear();
+
+                if (searchText.equals("")) {
+                    myAdapter.filterList(contactsList);
+                } else {
+                    for (int a = 0; a < contactsList.size(); a++) {
+                        if (contactsList.get(a).getName().toLowerCase().contains(searchText.toLowerCase())) {
+                            filterList.add(contactsList.get(a));
+                        }
+                        myAdapter.filterList(filterList);
+                    }
+                }
+            }
+        });
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && ContextCompat.checkSelfPermission(requireContext(), Manifest.permission.READ_CONTACTS) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(requireActivity(), new String[]{Manifest.permission.READ_CONTACTS}, 100);
@@ -75,6 +128,43 @@ public class ContactsFragment extends Fragment {
     }
 
     @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        inflater.inflate(R.menu.search_contacts_menu, menu);
+
+        MenuItem searchViewItem = menu.findItem(R.id.searchName);
+        final SearchView searchView = (SearchView) MenuItemCompat.getActionView(searchViewItem);
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                filter(newText);
+                return false;
+            }
+        });
+
+        super.onCreateOptionsMenu(menu, inflater);
+    }
+
+    private void filter(String text) {
+        Log.d("Filter", "Filtering with text:" + text);
+        ArrayList<ContactsModule> filteredlist = new ArrayList<>();
+        for (ContactsModule item : contactsList) {
+            if (item.getName().toLowerCase().contains(text.toLowerCase())) {
+                filteredlist.add(item);
+            }
+        }
+        if (filteredlist.isEmpty()) {
+            Toast.makeText(requireContext(), "No matching contact found", Toast.LENGTH_SHORT).show();
+        } else {
+            myAdapter.filterList(filteredlist);
+        }
+    }
+
+    @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         if (requestCode == 100) {
@@ -89,8 +179,6 @@ public class ContactsFragment extends Fragment {
 
 
     private void loadContacts() {
-        String contactId = "";
-        String displayName = "";
         Cursor cursor = requireContext().getContentResolver().query(ContactsContract.Contacts.CONTENT_URI, null, null, null, ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME + " ASC");
         if (cursor != null && cursor.getCount() > 0) {
             int hasPhoneNumberIndex = cursor.getColumnIndex(ContactsContract.Contacts.HAS_PHONE_NUMBER);
@@ -100,8 +188,8 @@ public class ContactsFragment extends Fragment {
                 int hasPhoneNumber = Integer.parseInt(cursor.getString(hasPhoneNumberIndex));
                 //the phone number should be longer than 0
                 if (hasPhoneNumber > 0) {
-                    contactId = cursor.getString(contactIdIndex);
-                    displayName = cursor.getString(displayNameIndex);
+                    String contactId = cursor.getString(contactIdIndex);
+                    String displayName = cursor.getString(displayNameIndex);
                     Cursor phoneCursor = requireContext().getContentResolver().query(
                             ContactsContract.CommonDataKinds.Phone.CONTENT_URI,
                             null,
@@ -119,9 +207,7 @@ public class ContactsFragment extends Fragment {
                     phoneCursor.close();
                 }
             }
-
-            //initialize adapter for recyclerView
-            ContactsAdapter myAdapter = new ContactsAdapter(requireContext(), contactsList);
+            myAdapter = new ContactsAdapter(requireContext(), contactsList);
             recyclerView.setAdapter(myAdapter);
             myAdapter.notifyDataSetChanged();
         }
@@ -133,4 +219,5 @@ public class ContactsFragment extends Fragment {
             cursor.close();
         }
     }
+
 }

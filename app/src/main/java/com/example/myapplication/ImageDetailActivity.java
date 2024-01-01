@@ -22,7 +22,7 @@ public class ImageDetailActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_image_detail);
 
-        imagePath = getIntent().getStringExtra("imagePath");
+        imagePath = getIntent().getStringExtra("imgPath");
         imageView = findViewById(R.id.idIVImage);
         //using this for zoom in and zoom out of the image
         scaleGestureDetector = new ScaleGestureDetector(this, new ScaleListener());
