@@ -18,22 +18,22 @@ import android.view.View;
 import android.widget.Button;
 
 
-public class PresentAdvisorFragment extends Fragment {
+public class ISTPFragment extends Fragment {
 
-    public static PresentAdvisorFragment newInstance() {
-        return new PresentAdvisorFragment();
+    public static ISTPFragment newInstance() {
+        return new ISTPFragment();
         // Required empty public constructor
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_present_advisor, container, false);
+        View rootView = inflater.inflate(R.layout.istp, container, false);
 
-        Button start_btn= rootView.findViewById(R.id.start_btn);
-        start_btn.setOnClickListener(new View.OnClickListener(){
+        Button home= rootView.findViewById(R.id.return_home_btn);
+        home.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                ((MainActivity)getActivity()).replaceFragment(Tap3_Page1Fragment.newInstance());
+                ((MainActivity)getActivity()).replaceFragment(PresentAdvisorFragment.newInstance());
             }
         });
 

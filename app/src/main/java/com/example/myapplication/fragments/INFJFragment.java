@@ -10,30 +10,26 @@ import android.view.ViewGroup;
 
 import com.example.myapplication.MainActivity;
 import com.example.myapplication.R;
-import com.example.myapplication.Tap3_Page1;
 
-import android.content.Intent;
-import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 
 
-public class PresentAdvisorFragment extends Fragment {
+public class INFJFragment extends Fragment {
 
-    public static PresentAdvisorFragment newInstance() {
-        return new PresentAdvisorFragment();
+    public static INFJFragment newInstance() {
+        return new INFJFragment();
         // Required empty public constructor
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_present_advisor, container, false);
+        View rootView = inflater.inflate(R.layout.infj, container, false);
 
-        Button start_btn= rootView.findViewById(R.id.start_btn);
-        start_btn.setOnClickListener(new View.OnClickListener(){
+        Button home= rootView.findViewById(R.id.return_home_btn);
+        home.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                ((MainActivity)getActivity()).replaceFragment(Tap3_Page1Fragment.newInstance());
+                ((MainActivity)getActivity()).replaceFragment(PresentAdvisorFragment.newInstance());
             }
         });
 

@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp"
-    tools:context=".Tap3_Page1">
+    tools:context="fragments.Tap3_Page4Fragment">
 
     <TextView
         android:id="@+id/ei_check"
@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:textSize="26sp"
         android:textStyle="bold"
-        android:text="I(내향형)vsE(외향형)"
+        android:text=""
         android:padding="20dp"
         android:gravity="center"/>
 
@@ -22,7 +22,7 @@
         android:id="@+id/question1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="1. (선물을 받는 상대와) 친해지는데 시간이 좀 걸렸나요?"
+        android:text="10. MBTI 얘기가 나오면 관심있어하고 재미있어 하나요?"
         android:textSize="18sp"
         android:textStyle="bold"
         android:layout_marginTop="10dp"/>
@@ -54,7 +54,7 @@
         android:id="@+id/question2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="2. 휴식 시간에 주로 혼자 보내는 것을 좋아하는 것 같나요?"
+        android:text="11. 누군가 어려움이 처하면 위로보다 해결방안을 제시하나요?"
         android:layout_marginTop="16dp"
         android:textSize="18sp"
         android:textStyle="bold" />
@@ -85,7 +85,7 @@
         android:id="@+id/question3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="3. 시끄러운 장소에 가면 가자기 말수가 줄어들거나 표정이 어두워지나요?"
+        android:text="12. (선물을 받는 상대와) 친해지는데 시간이 좀 걸렸나요?"
         android:layout_marginTop="16dp"
         android:textSize="18sp"
         android:textStyle="bold" />
@@ -135,5 +135,4 @@
             android:text="다음" />
 
     </LinearLayout>
-
 </LinearLayout>
