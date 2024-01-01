@@ -91,7 +91,7 @@
         android:id="@+id/question3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="회사일이나 공부를 할때 예외상황이 생기는 것을 극도로 싫어하나요?"
+        android:text="3.회사일이나 공부를 할때 예외상황이 생기는 것을 극도로 싫어하나요?"
         android:textColor="@color/white"
         android:layout_marginTop="16dp"
         android:textSize="18sp"
