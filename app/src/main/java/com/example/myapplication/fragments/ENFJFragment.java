@@ -9,18 +9,17 @@ import com.example.myapplication.MainActivity;
 import com.example.myapplication.R;
 import android.widget.Button;
 
+//추가한 import 부분
 import android.content.Intent;
 import android.net.Uri;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import androidx.fragment.app.Fragment;
 
-
 public class ENFJFragment extends Fragment {
 
     public static ENFJFragment newInstance() {
         return new ENFJFragment();
-        // Required empty public constructor
     }
 
     @Override
@@ -35,34 +34,37 @@ public class ENFJFragment extends Fragment {
             }
         });
 
-        ImageView shoppingImageView = rootView.findViewById(R.id.gift_1);
-
-        shoppingImageView.setOnClickListener(new View.OnClickListener() {
+        // 추가한 부분 : 이미지 누르면 쿠팡으로 이동
+        ImageView shoppingImageView1 = rootView.findViewById(R.id.gift_1);
+        shoppingImageView1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v){
-                openShoppingApp();
+                String shoppingAppPageUrl ="https://m.coupang.com/np/search?q=%EC%86%8C%EC%84%A4%EC%B1%85";
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(shoppingAppPageUrl));
+                startActivity(intent);
             }
         });
-        // Inflate the layout for this fragment
+
+        ImageView shoppingImageView2 = rootView.findViewById(R.id.gift_2);
+        shoppingImageView2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v){
+                String shoppingAppPageUrl ="https://m.coupang.com/np/search?q=%ED%8E%B8%EC%A7%80+%EC%B9%B4%EB%93%9C";
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(shoppingAppPageUrl));
+                startActivity(intent);
+            }
+        });
+
+        ImageView shoppingImageView3 = rootView.findViewById(R.id.gift_3);
+        shoppingImageView3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v){
+                String shoppingAppPageUrl ="https://m.coupang.com/np/search?q=%EC%BB%A4%ED%94%BC+%EC%84%B8%ED%8A%B8";
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(shoppingAppPageUrl));
+                startActivity(intent);
+            }
+        });
+
         return rootView;
-    }
-
-    private void openShoppingApp() {
-        // 쇼핑앱의 패키지명을 확인하고, 아래 "com.android.chrome" 대신에 해당 패키지명을 넣어주세요.
-        String shoppingAppPackage = "com.coupang.mobile&hl=ko&gl=US";
-
-        // 쇼핑앱의 마켓 URL을 확인하고, 아래 "https://play.google.com/store/apps/details?id=com.android.chrome" 대신에 해당 URL을 넣어주세요.
-        String shoppingAppMarketUrl = "https://play.google.com/store/apps/details?id=com.coupang.mobile&hl=ko&gl=US";
-
-        Intent intent = getActivity().getPackageManager().getLaunchIntentForPackage(shoppingAppPackage);
-
-        if (intent != null) {
-            // 쇼핑앱이 설치되어 있으면 앱을 엽니다.
-            startActivity(intent);
-        } else {
-            // 쇼핑앱이 설치되어 있지 않으면 마켓으로 이동합니다.
-            intent = new Intent(Intent.ACTION_VIEW, Uri.parse(shoppingAppMarketUrl));
-            startActivity(intent);
-        }
     }
 }

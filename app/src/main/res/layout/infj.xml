@@ -53,7 +53,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="1. "
+                android:text="1.명작 소설책"
                 android:textColor="@color/white"
                 android:textSize="18sp"
                 android:padding="16dp" />
@@ -65,13 +65,13 @@
                 android:adjustViewBounds="true"
                 android:padding="16dp"
                 android:scaleType="fitXY"
-                android:src="@drawable/gift" />
+                android:src="@drawable/fiction" />
 
             <!-- ImageView 2 -->
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="2."
+                android:text="2.커피"
                 android:textColor="@color/white"
                 android:textSize="18sp"
                 android:padding="16dp" />
@@ -83,12 +83,12 @@
                 android:adjustViewBounds="true"
                 android:padding="16dp"
                 android:scaleType="fitXY"
-                android:src="@drawable/gift" />
+                android:src="@drawable/coffee" />
             <!-- ImageView 3 -->
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="3."
+                android:text="3.플래너"
                 android:textColor="@color/white"
                 android:textSize="18sp"
                 android:padding="16dp" />
@@ -100,7 +100,7 @@
                 android:adjustViewBounds="true"
                 android:padding="16dp"
                 android:scaleType="fitXY"
-                android:src="@drawable/gift" />
+                android:src="@drawable/planner" />
             <Button
                 android:id="@+id/return_home_btn"
                 android:layout_width="wrap_content"

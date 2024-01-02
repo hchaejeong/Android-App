@@ -12,7 +12,11 @@ import com.example.myapplication.MainActivity;
 import com.example.myapplication.R;
 
 import android.widget.Button;
-
+import android.content.Intent;
+import android.net.Uri;
+import android.view.ViewGroup;
+import android.widget.ImageView;
+import androidx.fragment.app.Fragment;
 
 public class ISFJFragment extends Fragment {
 
@@ -30,6 +34,37 @@ public class ISFJFragment extends Fragment {
             @Override
             public void onClick(View view){
                 ((MainActivity)getActivity()).replaceFragment(PresentAdvisorFragment.newInstance());
+            }
+        });
+
+        // 추가한 부분 : 이미지 누르면 쿠팡으로 이동
+        ImageView shoppingImageView1 = rootView.findViewById(R.id.gift_1);
+        shoppingImageView1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v){
+                String shoppingAppPageUrl ="https://m.coupang.com/np/search?q=%EC%84%A0%EB%AC%BC%EC%9A%A9+%EC%8B%9C%EA%B3%84";
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(shoppingAppPageUrl));
+                startActivity(intent);
+            }
+        });
+
+        ImageView shoppingImageView2 = rootView.findViewById(R.id.gift_2);
+        shoppingImageView2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v){
+                String shoppingAppPageUrl ="https://m.coupang.com/np/search?q=%ED%96%A5%EC%B4%88";
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(shoppingAppPageUrl));
+                startActivity(intent);
+            }
+        });
+
+        ImageView shoppingImageView3 = rootView.findViewById(R.id.gift_3);
+        shoppingImageView3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v){
+                String shoppingAppPageUrl ="https://m.coupang.com/np/search?q=%ED%8E%B8%EC%A7%80+%EC%B9%B4%EB%93%9C";
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(shoppingAppPageUrl));
+                startActivity(intent);
             }
         });
 

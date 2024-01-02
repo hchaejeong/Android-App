@@ -12,7 +12,11 @@ import com.example.myapplication.MainActivity;
 import com.example.myapplication.R;
 
 import android.widget.Button;
-
+import android.content.Intent;
+import android.net.Uri;
+import android.view.ViewGroup;
+import android.widget.ImageView;
+import androidx.fragment.app.Fragment;
 
 public class ISTPFragment extends Fragment {
 
@@ -30,6 +34,37 @@ public class ISTPFragment extends Fragment {
             @Override
             public void onClick(View view){
                 ((MainActivity)getActivity()).replaceFragment(PresentAdvisorFragment.newInstance());
+            }
+        });
+
+        // 추가한 부분 : 이미지 누르면 쿠팡으로 이동
+        ImageView shoppingImageView1 = rootView.findViewById(R.id.gift_1);
+        shoppingImageView1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v){
+                String shoppingAppPageUrl ="https://m.coupang.com/np/search?q=%EB%93%9C%EB%A1%A0";
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(shoppingAppPageUrl));
+                startActivity(intent);
+            }
+        });
+
+        ImageView shoppingImageView2 = rootView.findViewById(R.id.gift_2);
+        shoppingImageView2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v){
+                String shoppingAppPageUrl ="https://m.coupang.com/np/search?q=%EC%95%A1%EC%85%98%EC%BA%A0";
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(shoppingAppPageUrl));
+                startActivity(intent);
+            }
+        });
+
+        ImageView shoppingImageView3 = rootView.findViewById(R.id.gift_3);
+        shoppingImageView3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v){
+                String shoppingAppPageUrl ="https://m.coupang.com/np/search?q=%ED%8D%BC%EC%A6%90";
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(shoppingAppPageUrl));
+                startActivity(intent);
             }
         });
 

@@ -52,7 +52,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="1. "
+                android:text="1. 가죽지갑"
                 android:textColor="@color/white"
                 android:textSize="18sp"
                 android:padding="16dp" />
@@ -64,13 +64,13 @@
                 android:adjustViewBounds="true"
                 android:padding="16dp"
                 android:scaleType="fitXY"
-                android:src="@drawable/gift" />
+                android:src="@drawable/wallet" />
 
             <!-- ImageView 2 -->
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="2."
+                android:text="2.캔들"
                 android:textColor="@color/white"
                 android:textSize="18sp"
                 android:padding="16dp" />
@@ -82,12 +82,12 @@
                 android:adjustViewBounds="true"
                 android:padding="16dp"
                 android:scaleType="fitXY"
-                android:src="@drawable/gift" />
+                android:src="@drawable/candle" />
             <!-- ImageView 3 -->
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="3."
+                android:text="3.와인"
                 android:textColor="@color/white"
                 android:textSize="18sp"
                 android:padding="16dp" />
@@ -99,7 +99,7 @@
                 android:adjustViewBounds="true"
                 android:padding="16dp"
                 android:scaleType="fitXY"
-                android:src="@drawable/gift" />
+                android:src="@drawable/wine" />
             <Button
                 android:id="@+id/return_home_btn"
                 android:layout_width="wrap_content"

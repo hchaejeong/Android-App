@@ -51,7 +51,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="1. "
+                android:text="1.ABC마트 기프트 카드"
                 android:textColor="@color/white"
                 android:textSize="18sp"
                 android:padding="16dp" />
@@ -63,13 +63,13 @@
                 android:adjustViewBounds="true"
                 android:padding="16dp"
                 android:scaleType="fitXY"
-                android:src="@drawable/gift" />
+                android:src="@drawable/giftcard" />
 
             <!-- ImageView 2 -->
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="2."
+                android:text="2.노트북 케이스"
                 android:textColor="@color/white"
                 android:textSize="18sp"
                 android:padding="16dp" />
@@ -81,12 +81,12 @@
                 android:adjustViewBounds="true"
                 android:padding="16dp"
                 android:scaleType="fitXY"
-                android:src="@drawable/gift" />
+                android:src="@drawable/notebookpouch" />
             <!-- ImageView 3 -->
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="3."
+                android:text="3.인테리어용 스탠드"
                 android:textColor="@color/white"
                 android:textSize="18sp"
                 android:padding="16dp" />
@@ -98,7 +98,7 @@
                 android:adjustViewBounds="true"
                 android:padding="16dp"
                 android:scaleType="fitXY"
-                android:src="@drawable/gift" />
+                android:src="@drawable/stand" />
             <Button
                 android:id="@+id/return_home_btn"
                 android:layout_width="wrap_content"
