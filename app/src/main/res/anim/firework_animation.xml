@@ -1,0 +1,26 @@
+<!-- res/anim/button_explosion.xml -->
+<set xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- 폭발 효과: Scale 애니메이션 -->
+    <scale
+        android:fromXScale="1.0"
+        android:fromYScale="1.0"
+        android:toXScale="1.5"
+        android:toYScale="1.5"
+        android:duration="1500"
+        android:pivotX="50%"
+        android:pivotY="50%" />
+
+    <!-- 폭죽 효과: Alpha 애니메이션 -->
+    <alpha
+        android:fromAlpha="1.0"
+        android:toAlpha="0.0"
+        android:duration="1500"
+        android:startOffset="150" />
+
+    <!-- 올라가는 효과: Translation 애니메이션 -->
+    <translate
+        android:fromYDelta="0"
+        android:toYDelta="-200"
+        android:duration="1500"
+        android:startOffset="150" />
+</set>

@@ -9,13 +9,13 @@
         android:id="@+id/result_btn"
         android:layout_width="237dp"
         android:layout_height="196dp"
-        android:text="결과보기"
-        android:textSize="34sp"
+        android:background="@drawable/gift"
         android:gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.53" />
 
     <TextView
         android:id="@+id/result_text"
@@ -23,11 +23,19 @@
         android:layout_height="74dp"
         android:layout_marginTop="120dp"
         android:text="완료되었습니다!!"
+        android:textColor="@color/white"
         android:gravity="center"
         android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@+id/result_btn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <nl.dionsegijn.konfetti.KonfettiView
+        android:id="@+id/viewKonfetti"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
