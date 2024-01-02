@@ -38,7 +38,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="<선물추천> #즐거움 #최신 유행 템
+                android:text="&lt;선물 추천&gt; #즐거움 #최신 유행 템
 \n\n 콘서트 티켓이나 음악 이벤트 입장권,함께 즐길 수 있는 다양한 액티비티,
 화려하고 유쾌한 데코 아이템 등이 좋겠어요.
 체험형 워크샵, 뮤지컬 콘서트 티켓, 라이브 음악 공연 티켓,
@@ -109,7 +109,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Your Text Here"
+                android:text=""
                 android:textSize="18sp"
                 android:padding="16dp" />
         </LinearLayout>

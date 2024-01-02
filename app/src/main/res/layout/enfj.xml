@@ -21,7 +21,7 @@
                 android:layout_width="187dp"
                 android:layout_height="105dp"
                 android:gravity="center"
-                android:text="상대는\n언변능숙형입니다"
+                android:text="상대는\n언변능숙형(ENFJ)입니다"
                 android:textColor="@color/white"
                 android:textSize="20sp"
                 app:layout_constraintStart_toStartOf="parent"
@@ -38,7 +38,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="<선물추천> #땀흘리는 장소 #관심사 #자연과 함께
+                android:text="&lt;선물 추천&gt; #땀흘리는 장소 #관심사 #자연과 함께
 \n\n    봉사나 기부와 관련된 기부금,감사의 마음을 담은 손작업 선물,
 감동적인 인류애 주제의 책 또는 영화 등이 좋겠어요.
 친근한 메시지가 적힌 팔찌, 손편지, 사진앨범, 차와 커피 도구세트,
@@ -109,7 +109,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Your Text Here"
+                android:text=""
                 android:textSize="18sp"
                 android:padding="16dp" />
         </LinearLayout>

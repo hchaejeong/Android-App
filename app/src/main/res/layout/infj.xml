@@ -39,7 +39,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="<선물추천> #독서관련 #마음이 담긴 카드
+                android:text="&lt;선물 추천&gt; #독서관련 #마음이 담긴 카드
 \n\n 감성적인 시나 고전 문학 작품집,예술적이고 고요한 장소에서의 체험,
 깊은 대화를 나눌 수 있는 책 또는 카페 상품 등이 좋겠어요.
 명작 소설, 예쁜 일기장, 핸드메이드 액세서리,
@@ -111,7 +111,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Your Text Here"
+                android:text=""
                 android:textSize="18sp"
                 android:padding="16dp" />
         </LinearLayout>

@@ -38,7 +38,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="<선물추천> #관심사 관련 상품권 #선물 영수증 포함
+                android:text="&lt;선물 추천&gt; #관심사 관련 상품권 #선물 영수증 포함
 \n\n 지적 도전을 제공하는 퍼즐이나 미니게임,혁신적인 과학/기술 도구,
 흥미로운 논제를 다루는 책 또는 강연 티켓 등이 좋겠어요.
 관심 분야의 책, 지적 도전을 제공하는 책,
@@ -110,7 +110,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Your Text Here"
+                android:text=""
                 android:textSize="18sp"
                 android:padding="16dp" />
         </LinearLayout>

@@ -38,7 +38,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="<선물 추천> - 선물 방향성: #추억 간직 #유행타지 않는 선물
+                android:text="&lt;선물 추천&gt; #추억 간직 #유행타지 않는 선물
 \n\n 함께 시간을 보낼 수 있는 액티비티 기프트 카드,
 따뜻하고 편안한 집 용품,그들을 위한 감사의 표시가 담긴 선물 등이 좋겠어요.
 가족 모임 계획 도움, 직접 만든 요리, 기념품,
@@ -110,7 +110,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Your Text Here"
+                android:text=""
                 android:textSize="18sp"
                 android:padding="16dp" />
         </LinearLayout>

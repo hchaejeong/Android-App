@@ -38,7 +38,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="<선물추천> #지식 습득 체험 #부담 제로
+                android:text="&lt;선물 추천&gt; #지식 습득 체험 #부담 제로
 \n\n 과학적 실험 키트나 공학 장난감,지적 도전을 제공하는 퍼즐이나 미니게임,
 철학적이거나 과학적인 주제를 다루는 책 등이 좋겠어요.
 공학/과학 서적 , 프로그래밍 교재/강의 ,
@@ -109,7 +109,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Your Text Here"
+                android:text=""
                 android:textSize="18sp"
                 android:padding="16dp" />
         </LinearLayout>

@@ -38,7 +38,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="<선물추천>#풍경 #휘게 스타일
+                android:text="&lt;선물 추천&gt; #풍경 #휘게 스타일
 \n\n 아트 클래스 참여 기회,예술용품 세트 (드로잉, 수채화 등),
 예술적인 디자인을 가진 액세서리나 소품 등이 좋겠어요.
 화분과 식물들 , 예쁜 그릇 , 부드러운 담요,
@@ -110,7 +110,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Your Text Here"
+                android:text=""
                 android:textSize="18sp"
                 android:padding="16dp" />
         </LinearLayout>

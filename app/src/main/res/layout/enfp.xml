@@ -38,7 +38,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="<선물추천> #서프라이즈 활동 #편리한 삶 #도움
+                android:text="&lt;선물 추천&gt;  #서프라이즈 활동 #편리한 삶 #도움
 \n\n 참신한 경험을 선물하는 기프트 카드,열정적인 활동을 지원하는 기부금,
 인터랙티브한 보드 게임이나 파티 게임 등이 좋겠어요.
 창의적인 글쓰기 워크샵 , 이벤트 티켓, 인생에 대한 명언을 담은 포스터
@@ -109,7 +109,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Your Text Here"
+                android:text=""
                 android:textSize="18sp"
                 android:padding="16dp" />
         </LinearLayout>

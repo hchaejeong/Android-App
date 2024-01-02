@@ -38,7 +38,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="<선물추천> #스트레스 해소 #창의적 활동
+                android:text="&lt;선물 추천&gt; #스트레스 해소 #창의적 활동
 \n\n 진지한 감정을 표현할 수 있는 편지나 카드,창의적인 저작물을 담은 소재 (예: 수제 음악, 시),
 그들의 관심사에 맞는 독특한 아이템 등이 좋겠어요.
 에세이나 시집 , 감성적인 소설, 그림 그리는 도구 , 타로 카드,
@@ -109,7 +109,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Your Text Here"
+                android:text=""
                 android:textSize="18sp"
                 android:padding="16dp" />
         </LinearLayout>

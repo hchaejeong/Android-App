@@ -38,7 +38,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="<선물추천> # 스포츠 경기 #흥분을 추구 #탐험
+                android:text="&lt;선물 추천&gt; # 스포츠 경기 #흥분을 추구 #탐험
 \n\n 액티비티 기프트 카드 (스카이다이빙, 래프팅, 등),스포츠용품이나 운동장비,
 다이닝 경험을 선물하는 레스토랑 상품권 등이 좋겠어요.
 전략 보드 게임 , GoPro 카메라, 스포츠 경기 티켓,
@@ -110,7 +110,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Your Text Here"
+                android:text=""
                 android:textSize="18sp"
                 android:padding="16dp" />
         </LinearLayout>

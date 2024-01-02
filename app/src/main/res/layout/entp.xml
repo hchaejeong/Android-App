@@ -38,7 +38,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="<선물추천> #새로운 경험 #독특한 것 #상품권,현금
+                android:text="&lt;선물 추천&gt; #새로운 경험 #독특한 것 #상품권,현금
 \n\n 토론 또는 논쟁 주제를 다루는 책,미스터리 퍼즐 게임이나 이스케이퍼 룸 티켓,
 첨단 기술 장비나 독특한 도구 등이 좋겠어요.
 지식관련 책 , 특별한 공예 클래스, 신기한 과학 실험 세트, 웃긴 T셔츠,
@@ -109,7 +109,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Your Text Here"
+                android:text=""
                 android:textSize="18sp"
                 android:padding="16dp" />
         </LinearLayout>

@@ -38,7 +38,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="<선물추천> #퀄리티 있는 시간 #시간과 노력
+                android:text="&lt;선물 추천&gt; #퀄리티 있는 시간 #시간과 노력
 \n\n 손작업으로 만든 예쁜 카드나 인형,향기로운 캔들 세트,그들의 관심사에 맞는 책 또는 DIY 키트 등이 좋겠어요.
 손수건, 향초, 사진앨범, 커스텀 주얼리,
 보온병, 케이크베이킹 세트, 시계, 가족 여행을 추천드립니다."
@@ -108,7 +108,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Your Text Here"
+                android:text=""
                 android:textSize="18sp"
                 android:padding="16dp" />
         </LinearLayout>

@@ -38,7 +38,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="<선물 추천> - #승부욕이 넘치는 장소 #구독권 #양보다 질
+                android:text="&lt;선물 추천&gt; - #승부욕이 넘치는 장소 #구독권 #양보다 질
 \n\n 정리 정돈을 도와주는 홈 오거나이징 아이템,일정 관리용 플래너나 다이어리,
 실용적이고 유용한 가전제품 등이 좋겠어요.
 실용적인 문구류 , 프로젝트 관리 앱 구독 , 고품질 일정 플래너
@@ -110,7 +110,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Your Text Here"
+                android:text=""
                 android:textSize="18sp"
                 android:padding="16dp" />
         </LinearLayout>
