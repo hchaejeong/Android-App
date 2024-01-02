@@ -113,54 +113,54 @@ public class Tap3_ResultPageFragment extends Fragment {
     }
     private void navigateToNextFragment() {
         // 여기에 다음 Fragment로의 전환 코드를 작성
-        if (ei>2 && sn>2 && tf>2 && jp>2){   //INTP
+        if (ei>1 && sn>1 && tf>1 && jp>1){   //INTP
             ((MainActivity)getActivity()).replaceFragment(INTPFragment.newInstance());
         }
-        else if (ei>2 && sn>2 && tf>2 && jp<2){ //INTJ
+        else if (ei>1 && sn>1 && tf>1 && jp<2){ //INTJ
             ((MainActivity)getActivity()).replaceFragment(INTJFragment.newInstance());
         }
-        else if (ei>2 && sn>2 && tf<2 && jp>2){ //INFP
+        else if (ei>1 && sn>1 && tf<2 && jp>1){ //INFP
             ((MainActivity)getActivity()).replaceFragment(INFPFragment.newInstance());
         }
-        else if (ei>2 && sn>2 && tf<2 && jp<2){  //INFJ
+        else if (ei>1 && sn>1 && tf<2 && jp<2){  //INFJ
             ((MainActivity)getActivity()).replaceFragment(INFJFragment.newInstance());
         }
 
         ////////////////////////////////////////////////////////////
-        else if (ei>2 && sn<2 && tf>2 && jp>2){ //ISTP
+        else if (ei>1 && sn<2 && tf>1 && jp>1){ //ISTP
             ((MainActivity)getActivity()).replaceFragment(ISTPFragment.newInstance());
         }
-        else if (ei>2 && sn<2 && tf>2 && jp<2){ //ISTJ
+        else if (ei>1 && sn<2 && tf>1 && jp<2){ //ISTJ
             ((MainActivity)getActivity()).replaceFragment(ISTJFragment.newInstance());
         }
-        else if (ei>2 && sn<2 && tf<2 && jp>2){ //ISFP
+        else if (ei>1 && sn<2 && tf<2 && jp>1){ //ISFP
             ((MainActivity)getActivity()).replaceFragment(ISFPFragment.newInstance());
         }
-        else if (ei>2 && sn<2 && tf<2 && jp<2){ //ISFJ
+        else if (ei>1 && sn<2 && tf<2 && jp<2){ //ISFJ
             ((MainActivity)getActivity()).replaceFragment(ISFJFragment.newInstance());
         }
         /////////////////////////////////////////////////////////////////
-        else if (ei<2 && sn>2 && tf>2 && jp>2){ //ENTP
+        else if (ei<2 && sn>1 && tf>1 && jp>1){ //ENTP
             ((MainActivity)getActivity()).replaceFragment(ENTPFragment.newInstance());
         }
-        else if (ei<2 && sn>2 && tf>2 && jp<2){ //ENTJ
+        else if (ei<2 && sn>1 && tf>1 && jp<2){ //ENTJ
             ((MainActivity)getActivity()).replaceFragment(ENTJFragment.newInstance());
         }
-        else if (ei<2 && sn>2 && tf<2 && jp>2){ //ENFP
+        else if (ei<2 && sn>1 && tf<2 && jp>1){ //ENFP
             ((MainActivity)getActivity()).replaceFragment(ENFPFragment.newInstance());
         }
-        else if (ei<2 && sn>2 && tf<2 && jp<2){ //ENFJ
+        else if (ei<2 && sn>1 && tf<2 && jp<2){ //ENFJ
             ((MainActivity)getActivity()).replaceFragment(ENFJFragment.newInstance());
         }
 
         ////////////////////////////////////////////////////////////
-        else if (ei<2 && sn<2 && tf>2 && jp>2){ //ESTP
+        else if (ei<2 && sn<2 && tf>1 && jp>1){ //ESTP
             ((MainActivity)getActivity()).replaceFragment(ESTPFragment.newInstance());
         }
-        else if (ei<2 && sn<2 && tf>2 && jp<2){ //ESTJ
+        else if (ei<2 && sn<2 && tf>1 && jp<2){ //ESTJ
             ((MainActivity)getActivity()).replaceFragment(ESTJFragment.newInstance());
         }
-        else if (ei<2 && sn<2 && tf<2 && jp>2){ //ESFP
+        else if (ei<2 && sn<2 && tf<2 && jp>1){ //ESFP
             ((MainActivity)getActivity()).replaceFragment(ESFPFragment.newInstance());
         }
         else if (ei<2 && sn<2 && tf<2 && jp<2){ //ESFJ

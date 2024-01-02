@@ -49,10 +49,10 @@ public class ENFJFragment extends Fragment {
 
     private void openShoppingApp() {
         // 쇼핑앱의 패키지명을 확인하고, 아래 "com.android.chrome" 대신에 해당 패키지명을 넣어주세요.
-        String shoppingAppPackage = "com.android.chrome";
+        String shoppingAppPackage = "com.coupang.mobile&hl=ko&gl=US";
 
         // 쇼핑앱의 마켓 URL을 확인하고, 아래 "https://play.google.com/store/apps/details?id=com.android.chrome" 대신에 해당 URL을 넣어주세요.
-        String shoppingAppMarketUrl = "https://play.google.com/store/apps/details?id=com.android.chrome";
+        String shoppingAppMarketUrl = "https://play.google.com/store/apps/details?id=com.coupang.mobile&hl=ko&gl=US";
 
         Intent intent = getActivity().getPackageManager().getLaunchIntentForPackage(shoppingAppPackage);
 
