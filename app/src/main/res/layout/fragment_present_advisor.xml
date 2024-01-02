@@ -20,21 +20,21 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="263dp"
-        android:layout_height="168dp"
+        android:layout_width="254dp"
+        android:layout_height="126dp"
         android:layout_marginTop="48dp"
         android:gravity="center"
         android:text="선물 고민\n해결사"
         android:textColor="@color/white"
-        android:textSize="60sp"
+        android:textSize="40sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="248dp"
-        android:layout_height="232dp"
+        android:layout_width="213dp"
+        android:layout_height="173dp"
         android:layout_marginTop="22dp"
         android:src="@drawable/phd"
         app:layout_constraintEnd_toEndOf="parent"

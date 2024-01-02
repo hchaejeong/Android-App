@@ -69,10 +69,10 @@ public class Tap3_Page3Fragment extends Fragment {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 if (checkedId == R.id.yes_1_1) {
-                    sharedViewModel.setData_1(1);
+                    sharedViewModel.setData_7(1);
                 }
                 else if (checkedId == R.id.no_1_1) {
-                    sharedViewModel.setData_1(0);
+                    sharedViewModel.setData_7(0);
                 }
             }
         });
@@ -82,10 +82,10 @@ public class Tap3_Page3Fragment extends Fragment {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 if (checkedId == R.id.yes_1_2) {
-                    sharedViewModel.setData_2(1);
+                    sharedViewModel.setData_8(1);
                 }
                 else if (checkedId == R.id.no_1_2) {
-                    sharedViewModel.setData_2(0);
+                    sharedViewModel.setData_8(0);
                 }
             }
         });
@@ -95,10 +95,10 @@ public class Tap3_Page3Fragment extends Fragment {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 if (checkedId == R.id.yes_1_3) {
-                    sharedViewModel.setData_3(0);
+                    sharedViewModel.setData_9(0);
                 }
                 else if (checkedId == R.id.no_1_3) {
-                    sharedViewModel.setData_1(1);
+                    sharedViewModel.setData_9(1);
                 }
             }
         });
