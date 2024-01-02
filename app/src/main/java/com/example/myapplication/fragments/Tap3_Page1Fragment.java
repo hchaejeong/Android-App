@@ -13,16 +13,16 @@ import com.example.myapplication.R;
 import com.example.myapplication.SharedViewModel;
 
 import androidx.lifecycle.ViewModelProvider;
-
 import android.widget.RadioGroup;
 import android.widget.Toast;
+
+import android.content.SharedPreferences;
 
 public class Tap3_Page1Fragment extends Fragment {
     private SharedViewModel sharedViewModel;
     private View view;
     private int e_count=0;
     private int i_count=0;
-
     public static Tap3_Page1Fragment newInstance() {
         return new Tap3_Page1Fragment();
     }
@@ -45,6 +45,7 @@ public class Tap3_Page1Fragment extends Fragment {
         RadioGroup radioGroup2 = view.findViewById(R.id.radioGroup2);
         // 세 번째 질문과 라디오 그룹
         RadioGroup radioGroup3 = view.findViewById(R.id.radioGroup3);
+
 
         Button before1 = view.findViewById(R.id.before1);
         before1.setOnClickListener(new View.OnClickListener() {

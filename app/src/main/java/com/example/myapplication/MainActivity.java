@@ -43,8 +43,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
-
         // ViewModel을 사용하기 위한 부분
         sharedViewModel = new ViewModelProvider(this).get(SharedViewModel.class);
         sharedViewModel.setData_1(0);
@@ -59,8 +57,6 @@ public class MainActivity extends AppCompatActivity {
         sharedViewModel.setData_10(0);
         sharedViewModel.setData_11(0);
         sharedViewModel.setData_12(0);
-
-
 
         //getSupportFragmentManager().beginTransaction().replace(R.id.container, Tap3_Page1Fragment.newInstance()).commit();
 

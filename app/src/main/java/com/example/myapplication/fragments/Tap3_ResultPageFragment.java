@@ -1,6 +1,8 @@
 package com.example.myapplication.fragments;
 
+import android.content.Intent;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,6 +15,7 @@ import android.view.animation.AnimationUtils;
 import android.view.animation.ScaleAnimation;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 
 import androidx.fragment.app.Fragment;
 
@@ -73,8 +76,7 @@ public class Tap3_ResultPageFragment extends Fragment {
         jp=question1+question3+question5;
 
 
-
-        Button res_btn = view.findViewById(R.id.result_btn);
+        ImageView res_btn = view.findViewById(R.id.result_btn);
         res_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

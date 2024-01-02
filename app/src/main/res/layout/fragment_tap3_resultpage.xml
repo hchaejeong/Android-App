@@ -5,17 +5,30 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <Button
+    <ImageView
         android:id="@+id/result_btn"
         android:layout_width="237dp"
         android:layout_height="196dp"
-        android:background="@drawable/gift"
-        android:gravity="center"
+        app:srcCompat="@drawable/gift"
+        tools:layout_editor_absoluteX="77dp"
+        tools:layout_editor_absoluteY="352dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.53" />
+        app:layout_constraintVertical_bias="0.53"/>
+
+<!--    <Button-->
+<!--        android:id="@+id/result_btn"-->
+<!--        android:layout_width="237dp"-->
+<!--        android:layout_height="196dp"-->
+<!--        android:background="@drawable/gift"-->
+<!--        android:gravity="center"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:layout_constraintVertical_bias="0.53" />-->
 
     <TextView
         android:id="@+id/result_text"
@@ -34,8 +47,11 @@
     <nl.dionsegijn.konfetti.KonfettiView
         android:id="@+id/viewKonfetti"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
