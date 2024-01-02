@@ -2,30 +2,116 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:background="#2E2C2C"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/return_home_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="161dp"
-        android:layout_marginEnd="150dp"
-        android:layout_marginBottom="41dp"
-        android:text="처음으로"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/intp_text"
-        android:layout_width="187dp"
-        android:layout_height="105dp"
-        android:layout_marginTop="36dp"
-        android:gravity="center"
-        android:text="상대는\nINTP입니다"
-        android:textSize="34sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <!-- TextView -->
+            <TextView
+                android:layout_width="187dp"
+                android:layout_height="105dp"
+                android:gravity="center"
+                android:text="상대는\n논리학자형입니다"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="  이 성격의 유형의 일부는 선물을 주고받는 행동을 불필요하고 비합리적인 것으로 봅니다. 그러나 막상 자신이 다른 사람들을 위한 선물을 선택하는 것엔 너무 신중하게 정합니다. 이들의 호기심을 자극할 수 있는 활동을 추천합니다. 의외로 호기심을 채울 수 있는 외출을 즐기는 유형입니다. 특히 호기심 많은 사람들은 자신이 좋아하는 물건이 어떻게 만들어지는지 알 수 있을 때 더 만족해 합니다. 이런 과정을 배울 수 있는 기회 제공 선물도 좋습니다. 예를 들어 맥주를 좋아하는 사람이라면 맥주공장 견학 체험을 가는 것도 좋습니다. 만약 상대가 선물을 받는 것에 부담이 된다고 말하면 커피나 식사를 함꼐 하는 것 만으로도 충분할 수 있습니다. 이 분에게는 지식과 학습에 관한 아이템을 추천합니다."
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:padding="16dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="<선물추천> #지식 습득 체험 #부담 제로
+\n\n 과학적 실험 키트나 공학 장난감,지적 도전을 제공하는 퍼즐이나 미니게임,
+철학적이거나 과학적인 주제를 다루는 책 등이 좋겠어요.
+공학/과학 서적 , 프로그래밍 교재/강의 ,
+철학 관련 책, 기술 관련 아이템, VR 헤드셋을 추천드립니다."
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:padding="16dp" />
+
+            <!-- ImageView 1 -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="1. "
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:padding="16dp" />
+
+            <ImageView
+                android:id="@+id/gift_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:padding="16dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/gift" />
+
+            <!-- ImageView 2 -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="2."
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:padding="16dp" />
+
+            <ImageView
+                android:id="@+id/gift_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:padding="16dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/gift" />
+            <!-- ImageView 3 -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="3."
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:padding="16dp" />
+
+            <ImageView
+                android:id="@+id/gift_3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:padding="16dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/gift" />
+            <Button
+                android:id="@+id/return_home_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="처음으로"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Your Text Here"
+                android:textSize="18sp"
+                android:padding="16dp" />
+        </LinearLayout>
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

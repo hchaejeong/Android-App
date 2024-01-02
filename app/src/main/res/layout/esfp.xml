@@ -2,30 +2,116 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:background="#2E2C2C"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/return_home_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="161dp"
-        android:layout_marginEnd="150dp"
-        android:layout_marginBottom="41dp"
-        android:text="처음으로"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/esfp_text"
-        android:layout_width="187dp"
-        android:layout_height="105dp"
-        android:layout_marginTop="36dp"
-        android:gravity="center"
-        android:text="상대는\nESFP입니다"
-        android:textSize="34sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <!-- TextView -->
+            <TextView
+                android:layout_width="187dp"
+                android:layout_height="105dp"
+                android:gravity="center"
+                android:text="상대는\n연애인형(ESFP)입니다"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="  이 성격의 사람은 재미와 설렘을 좋아합니다. 모험심 넘치는 스타일과 독특한 감각에 맞는 선물을 고를 때 최고의 선물이 될 것입니다. 함꼐 즐거운 저녁을 보내는 것을 너무 좋아합니다. 좋아하는 노래나 춤을 추거나, 좋아하는 공연 콘서트 티켓을 주는 것도 좋은 선물이 될 것입니다. 오픈 하면서 신선함을 느낄 수 있는 특이한 디자인의 선물 등 다른 사람이 많이 가지지 않은 신상품이나 유니크한 제품을 찾아 보는 것도 좋습니다. 이 분에게는 다양한 체험권과 장식 아이템을 추천합니다."
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:padding="16dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="<선물추천> #즐거움 #최신 유행 템
+\n\n 콘서트 티켓이나 음악 이벤트 입장권,함께 즐길 수 있는 다양한 액티비티,
+화려하고 유쾌한 데코 아이템 등이 좋겠어요.
+체험형 워크샵, 뮤지컬 콘서트 티켓, 라이브 음악 공연 티켓,
+독특한 영화 포스터, 매력적인 패션 아이템, 스타일리시한 액세서리를 추천드립니다."
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:padding="16dp" />
+
+            <!-- ImageView 1 -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="1. "
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:padding="16dp" />
+
+            <ImageView
+                android:id="@+id/gift_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:padding="16dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/gift" />
+
+            <!-- ImageView 2 -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="2."
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:padding="16dp" />
+
+            <ImageView
+                android:id="@+id/gift_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:padding="16dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/gift" />
+            <!-- ImageView 3 -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="3."
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:padding="16dp" />
+
+            <ImageView
+                android:id="@+id/gift_3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:padding="16dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/gift" />
+            <Button
+                android:id="@+id/return_home_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="처음으로"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Your Text Here"
+                android:textSize="18sp"
+                android:padding="16dp" />
+        </LinearLayout>
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

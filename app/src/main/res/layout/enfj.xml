@@ -2,10 +2,9 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:background="#2E2C2C"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-
-
 
     <ScrollView
         android:layout_width="match_parent"
@@ -14,73 +13,105 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="16dp">
-
-                <TextView
-                    android:id="@+id/enfj_text"
-                    android:layout_width="187dp"
-                    android:layout_height="105dp"
-                    android:layout_marginStart="31dp"
-                    android:layout_marginTop="16dp"
-                    android:gravity="center"
-                    android:text="상대는\n언변능숙형입니다"
-                    android:textSize="20sp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <Button
-                    android:id="@+id/return_home_btn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="52dp"
-                    android:layout_marginEnd="52dp"
-                    android:text="처음으로"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-
-            </RelativeLayout>
+            android:orientation="vertical"
+            android:gravity="center">
 
             <!-- TextView -->
+            <TextView
+                android:layout_width="187dp"
+                android:layout_height="105dp"
+                android:gravity="center"
+                android:text="상대는\n언변능숙형입니다"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="  이 성격 유형은 다른 사람들을 돕는 데 너무 신경을 써서 자신을 돌보는 것을 잊어버릴 수 있습니다. 이러한 성격이 필요한 것은 자기를 돌불 수 있는 선물입니다. 높은 신체 활동이 자신감을 높이고 스트레스를 완화하는데 도움이 된다고 말할 가능성이 가장 높은 유형입니다. 또한 상대가 관심 있어 하는 것을 관찰하고 그에 어울리는 선물을 주면 꽤 좋아합니다. 이들은 자연과 함께 시간을 보내는 것도 좋아합니다. 아름다운 자연 세계를 연상시키는 경험이나 선물도 좋습니다. 이 분한테는 개인적이고 의미 있는 선물을 추천드립니다."
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:padding="16dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="<선물추천> #땀흘리는 장소 #관심사 #자연과 함께
+\n\n    봉사나 기부와 관련된 기부금,감사의 마음을 담은 손작업 선물,
+감동적인 인류애 주제의 책 또는 영화 등이 좋겠어요.
+친근한 메시지가 적힌 팔찌, 손편지, 사진앨범, 차와 커피 도구세트,
+예술적인 워크샵, 심미적으로 담긴 여행지 권한, 미술품 을 추천드립니다."
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:padding="16dp" />
+
+            <!-- ImageView 1 -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="1. "
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:padding="16dp" />
+
+            <ImageView
+                android:id="@+id/gift_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:padding="16dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/gift" />
+
+            <!-- ImageView 2 -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="2."
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:padding="16dp" />
+
+            <ImageView
+                android:id="@+id/gift_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:padding="16dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/gift" />
+            <!-- ImageView 3 -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="3."
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:padding="16dp" />
+
+            <ImageView
+                android:id="@+id/gift_3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:padding="16dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/gift" />
+            <Button
+                android:id="@+id/return_home_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="처음으로"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Your Text Here"
                 android:textSize="18sp"
                 android:padding="16dp" />
-
-            <!-- ImageView 1 -->
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:src="@drawable/gift"
-                android:scaleType="fitXY"
-                android:adjustViewBounds="true"
-                android:padding="16dp" />
-
-            <!-- ImageView 2 -->
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:src="@drawable/gift"
-                android:scaleType="fitXY"
-                android:adjustViewBounds="true"
-                android:padding="16dp" />
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:src="@drawable/gift"
-                android:scaleType="fitXY"
-                android:adjustViewBounds="true"
-                android:padding="16dp" />
-
         </LinearLayout>
     </ScrollView>
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>
