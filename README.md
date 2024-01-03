@@ -47,6 +47,13 @@ This tab recommends gifts to give to others by asking simple questions.
  - When you press the "Start" button on the initial screen, all radio buttons are unchecked.
  - Clicking on the gift photo on the results screen took you to the page where you searched for that product on Coupang APP.
 
+|Reset Button|Make sure all radio buttons are checked|
+|------|----|
+|![](https://github.com/hchaejeong/My-Santa/assets/154505487/5da6a35a-ac90-4a20-a30c-d94cc0b71712.gif)|![](https://github.com/hchaejeong/My-Santa/assets/154505487/be9aef6b-fcac-43f9-a415-779a427747d5.gif)|
+
+|Maintain button state|Connect to Coupang|
+|------|----|
+|![](https://github.com/hchaejeong/My-Santa/assets/154505487/cfd30360-e72d-4f30-988b-595d3c9a0482.gif)|![](https://github.com/hchaejeong/My-Santa/assets/154505487/e605c86a-dbb1-402d-b215-525e4da7f713.gif)|
 
 ## 🧑‍🤝‍🧑 Contributors
   <table border="" cellspacing="0" cellpadding="0" width="100%">
