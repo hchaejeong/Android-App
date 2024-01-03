@@ -12,10 +12,10 @@ import com.example.myapplication.MainActivity;
 import com.example.myapplication.R;
 import com.example.myapplication.SharedViewModel;
 
+import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import android.widget.RadioGroup;
 import android.widget.Toast;
-
 import android.content.SharedPreferences;
 
 public class Tap3_Page1Fragment extends Fragment {
@@ -26,10 +26,10 @@ public class Tap3_Page1Fragment extends Fragment {
     public static Tap3_Page1Fragment newInstance() {
         return new Tap3_Page1Fragment();
     }
-//
-//    public Tap3_Page1Fragment() {
-//        // Required empty public constructor
-//    }
+    private RadioGroup radioGroup1;
+    private RadioGroup radioGroup2;
+    private RadioGroup radioGroup3;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,12 +40,30 @@ public class Tap3_Page1Fragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         view=inflater.inflate(R.layout.fragment_tap3_page1, container, false);
 
-        RadioGroup radioGroup1 = view.findViewById(R.id.radioGroup1);
+        radioGroup1 = view.findViewById(R.id.radioGroup1);
         // 두 번째 질문과 라디오 그룹
-        RadioGroup radioGroup2 = view.findViewById(R.id.radioGroup2);
+        radioGroup2 = view.findViewById(R.id.radioGroup2);
         // 세 번째 질문과 라디오 그룹
-        RadioGroup radioGroup3 = view.findViewById(R.id.radioGroup3);
+        radioGroup3 = view.findViewById(R.id.radioGroup3);
 
+        sharedViewModel.getRadioGroup1CheckedId().observe(getViewLifecycleOwner(), new Observer<Integer>() {
+            @Override
+            public void onChanged(Integer checkedId) {
+                radioGroup1.check(checkedId);
+            }
+        });
+        sharedViewModel.getRadioGroup2CheckedId().observe(getViewLifecycleOwner(), new Observer<Integer>() {
+            @Override
+            public void onChanged(Integer checkedId) {
+                radioGroup2.check(checkedId);
+            }
+        });
+        sharedViewModel.getRadioGroup3CheckedId().observe(getViewLifecycleOwner(), new Observer<Integer>() {
+            @Override
+            public void onChanged(Integer checkedId) {
+                radioGroup3.check(checkedId);
+            }
+        });
 
         Button before1 = view.findViewById(R.id.before1);
         before1.setOnClickListener(new View.OnClickListener() {
@@ -78,6 +96,7 @@ public class Tap3_Page1Fragment extends Fragment {
                 else if (checkedId == R.id.no_1_1) {
                     sharedViewModel.setData_1(1);
                 }
+                sharedViewModel.setRadioGroup1CheckedId(checkedId);
             }
         });
 
@@ -91,6 +110,7 @@ public class Tap3_Page1Fragment extends Fragment {
                 else if (checkedId == R.id.no_1_2) {
                     sharedViewModel.setData_2(0);
                 }
+                sharedViewModel.setRadioGroup2CheckedId(checkedId);
             }
         });
 
@@ -104,6 +124,7 @@ public class Tap3_Page1Fragment extends Fragment {
                 else if (checkedId == R.id.no_1_3) {
                     sharedViewModel.setData_1(1);
                 }
+                sharedViewModel.setRadioGroup3CheckedId(checkedId);
             }
         });
         return view;
@@ -118,7 +139,16 @@ public class Tap3_Page1Fragment extends Fragment {
 
     // 라디오 그룹 내의 라디오 버튼이 하나라도 체크되었는지 확인하는 메소드
     private boolean isRadioButtonChecked(RadioGroup radioGroup) {
-        int checkedRadioButtonId = radioGroup.getCheckedRadioButtonId();
+        int checkedRadioButtonId = radioGroup.getCheckedRadioButtonId()-1;
         return checkedRadioButtonId != View.NO_ID;
+    }
+    public void setSharedViewModel(SharedViewModel viewModel) {
+        this.sharedViewModel = viewModel;
+    }
+
+    public void clearRadioGroup() {
+        radioGroup1.clearCheck();
+        radioGroup2.clearCheck();
+        radioGroup3.clearCheck();
     }
 }
