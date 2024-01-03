@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".fragments.Tap3_Page1Fragment"
-    android:padding="25dp">
+    android:padding="25dp"
+    android:background="@drawable/santa_background2">
 
 
     <TextView

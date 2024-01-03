@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".fragments.Tap3_Page2Fragment"
-    android:padding="25dp">
+    android:padding="25dp"
+    android:background="@drawable/santa_background2">
 
     <TextView
         android:id="@+id/ei_check"
@@ -27,7 +28,7 @@
         android:textColor="@color/white"
         android:textSize="18sp"
         android:textStyle="bold"
-        android:layout_marginTop="10dp"/>
+        android:layout_marginTop="10dp" />
 
     <RadioGroup
         android:id="@+id/radioGroup1"
