@@ -19,13 +19,14 @@ This tab simulates the contacts application of the Android phone by loading, add
  - Each contact can be removed and deleted from the actual phone Contacts storage by simply swiping to the right.
  - We can add a contact by clicking the bottom right + button. This will add the contact directly to our actual phone Contacts.
 
-<p align="center">
-  <img width="20%"src="https://github.com/hchaejeong/My-Santa/assets/154505487/5e2bc6c0-38a9-4a4e-aff5-22e9383606fb.gif" />
-  <img width="20%"src="https://github.com/hchaejeong/My-Santa/assets/154505487/faf5c38c-dda9-489a-9f7f-e2acaf2b1c68.gif" />
-  <img width="20%"src="https://github.com/hchaejeong/My-Santa/assets/154505487/dc99ef99-c342-41fc-97a3-61d58295e200.gif" />
-  <img width="20%"src="https://github.com/hchaejeong/My-Santa/assets/154505487/f7217017-e339-4d8c-a9f8-a9541d12cd44.gif" />
-  <img width="20%"src="https://github.com/hchaejeong/My-Santa/assets/154505487/f7217017-e339-4d8c-a9f8-a9541d12cd44.gif" />
-</p>
+|Add Contact|Search and Delete|
+|------|----|
+|![](https://github.com/hchaejeong/My-Santa/assets/154505487/dc99ef99-c342-41fc-97a3-61d58295e200.gif)|![](https://github.com/hchaejeong/My-Santa/assets/154505487/f7217017-e339-4d8c-a9f8-a9541d12cd44.gif)|
+
+|Calling/Sending Message directly from main|View Contact Detail and Call/Send Message|
+|------|----|
+|![](https://github.com/hchaejeong/My-Santa/assets/154505487/5e2bc6c0-38a9-4a4e-aff5-22e9383606fb.gif)|![](https://github.com/hchaejeong/My-Santa/assets/154505487/faf5c38c-dda9-489a-9f7f-e2acaf2b1c68.gif)|
+
 
 ### Tab 2: Gallery Page
 This tab simulates the gallery application of an Android phone by loading, adding, viewing, and applying color filters for the images stored in the actual phone.
