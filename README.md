@@ -3,13 +3,13 @@
 > 🕰️ 2023.12.28 ~ 2024.01.03 <br />
 *2023 Winter Madcamp Project* <br/>
 
-## 🖥Project Introduction
+## 🖥 Project Introduction
 Our application consists of three tabs: contacts tab, gallery tab, and gift suggestion tab. 
 
-## ⚙️Environment
+## ⚙️ Environment
 <img src="https://img.shields.io/badge/AndroidStudio-3DDC84?style=for-the-badge&logo=AndroidStudio&logoColor=white"> <img src="https://img.shields.io/badge/Java-7F52FF?style=for-the-badge&logo=Java&logoColor=white"> ![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=Git&logoColor=white) ![Github](https://img.shields.io/badge/Github-181717?style=for-the-badge&logo=Github&logoColor=white) ![Notion](https://img.shields.io/badge/Notion-808080?style=for-the-badge&logo=Notion&logoColor=white)
 
-## 📌Key features
+## 📌 Key features
 ### Tab 1: Contacts Page
 This tab simulates the contacts application of the Android phone by loading, adding, searching, and deleting the contacts stored in the actual phone. 
  - When the Contacts tab is selected, we see a list of all contacts retrieved from the actual phone storage.
@@ -43,7 +43,7 @@ This tab recommends gifts to give to others by asking simple questions.
  - Clicking on the gift photo on the results screen took you to the page where you searched for that product on Coupang APP.
 
 
-## 🧑‍🤝‍🧑Contributors
+## 🧑‍🤝‍🧑 Contributors
   <table border="" cellspacing="0" cellpadding="0" width="100%">
   <tr width="100%">
   <td align="center">Chaejeong Hyun</a></td>
