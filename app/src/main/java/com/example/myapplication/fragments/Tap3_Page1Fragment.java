@@ -16,9 +16,9 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import android.widget.RadioGroup;
 import android.widget.Toast;
-import android.content.SharedPreferences;
 
 public class Tap3_Page1Fragment extends Fragment {
+
     private SharedViewModel sharedViewModel;
     private View view;
     private int e_count=0;
@@ -39,6 +39,7 @@ public class Tap3_Page1Fragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         view=inflater.inflate(R.layout.fragment_tap3_page1, container, false);
+
 
         radioGroup1 = view.findViewById(R.id.radioGroup1);
         // 두 번째 질문과 라디오 그룹
