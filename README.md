@@ -36,10 +36,7 @@ This tab simulates the gallery application of an Android phone by loading, addin
 
 |Photoshop|Take Photo and Add To Gallery|
 |------|----|
-|![](https://github.com/hchaejeong/My-Santa/assets/154505487/f45e3e2f-618c-4145-a508-7cbd43fc50e1.gif)||
-|Camera|Take Photo and Add To Gallery|
-|------|----|
-|![](https://github.com/hchaejeong/My-Santa/assets/154505487/287cde50-0465-4c29-bb52-6415db193937.gif)||
+|![](https://github.com/hchaejeong/My-Santa/assets/154505487/f45e3e2f-618c-4145-a508-7cbd43fc50e1.gif)|![](https://github.com/hchaejeong/My-Santa/assets/154505487/287cde50-0465-4c29-bb52-6415db193937.gif)|
 
 
 ### Tab 3: PresentAdvisor Page
