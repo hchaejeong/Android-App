@@ -32,7 +32,8 @@ This tab recommends gifts to give to others by asking simple questions.
  - When conducting a survey, press the next button to move to the next fragment and maintain the previous checked state when returning to the previous fragment. 
  - When you press the "Start" button on the initial screen, all radio buttons are unchecked.
  - Clicking on the gift photo on the results screen took you to the page where you searched for that product on Coupang APP.
- - 
+
+
 ## 🧑‍🤝‍🧑Contributors
   <table border="" cellspacing="0" cellpadding="0" width="100%">
   <tr width="100%">
@@ -43,7 +44,7 @@ This tab recommends gifts to give to others by asking simple questions.
 </tr>
   <tr width="100%">
   <td  align="center"><a href="mailto:hchaejeong@kaist.ac.kr">hchaejeong@kaist.ac.kr</a></td>
-  <td  align="center"><a href="mailto:.ac.kr">cbg7144@kaist.ac.kr</a></td>
+  <td  align="center"><a href="mailto:.ac.kr">yunhs139@dgist.ac.kr</a></td>
      </tr>
       <tr width="100%">
        <td  align="center"><p>Tab1: Contacts</p><p>Tab2: Gallery</p><p>Connection</p></td>
