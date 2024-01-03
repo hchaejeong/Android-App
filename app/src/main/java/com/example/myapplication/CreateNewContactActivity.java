@@ -91,6 +91,7 @@ public class CreateNewContactActivity extends AppCompatActivity {
                     build());
         }
 
+
         if(contacts.size() > 0) {
             try {
                 getContentResolver().applyBatch(ContactsContract.AUTHORITY, contacts);

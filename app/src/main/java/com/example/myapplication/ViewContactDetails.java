@@ -5,8 +5,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
+import android.content.ContentUris;
+import android.database.Cursor;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Build;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.text.TextUtils;
 import android.widget.TextView;
 import android.Manifest;
@@ -16,6 +21,9 @@ import android.net.Uri;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
+
+import java.io.IOException;
+import java.io.InputStream;
 
 public class ViewContactDetails extends AppCompatActivity {
     private String contactName, contactNumber;
@@ -38,6 +46,8 @@ public class ViewContactDetails extends AppCompatActivity {
 
         nameTV.setText(contactName);
         contactTV.setText(contactNumber);
+
+        loadContactImage();
 
         callIV.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -68,6 +78,56 @@ public class ViewContactDetails extends AppCompatActivity {
         }
 
         startActivity(callIntent);
+    }
+
+    private void loadContactImage() {
+        Uri contactUri = getContactUri(contactNumber);
+        Bitmap contactImageBitmap = getContactPhoto(contactUri);
+
+        if (contactImageBitmap != null) {
+            contactIV.setImageBitmap(contactImageBitmap);
+        } else {
+            // If no contact image is available, set a default image
+            contactIV.setImageResource(R.drawable.baseline_account_circle_24);
+        }
+    }
+
+    private Uri getContactUri(String phoneNumber) {
+        Uri lookupUri = Uri.withAppendedPath(ContactsContract.PhoneLookup.CONTENT_FILTER_URI, Uri.encode(phoneNumber));
+        Cursor cursor = getContentResolver().query(lookupUri, new String[]{ContactsContract.PhoneLookup._ID}, null, null, null);
+
+        if (cursor != null && cursor.moveToFirst()) {
+            int contactIdIndex = cursor.getColumnIndex(ContactsContract.PhoneLookup._ID);
+            long contactId = cursor.getLong(contactIdIndex);
+            cursor.close();
+            return ContentUris.withAppendedId(ContactsContract.Contacts.CONTENT_URI, contactId);
+        }
+
+        if (cursor != null) {
+            cursor.close();
+        }
+
+        return null;
+    }
+
+    private Bitmap getContactPhoto(Uri contactUri) {
+        InputStream inputStream = ContactsContract.Contacts.openContactPhotoInputStream(getContentResolver(), contactUri, true);
+
+        if (inputStream != null) {
+            try {
+                BitmapFactory.Options options = new BitmapFactory.Options();
+                options.inPreferredConfig = Bitmap.Config.ARGB_8888;
+                return BitmapFactory.decodeStream(inputStream, null, options);
+            } finally {
+                try {
+                    inputStream.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+
+        return null;
     }
 
 }

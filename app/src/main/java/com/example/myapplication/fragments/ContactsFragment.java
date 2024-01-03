@@ -1,5 +1,6 @@
 package com.example.myapplication.fragments;
 
+import android.content.ContentUris;
 import android.net.Uri;
 import android.os.Bundle;
 
@@ -49,7 +50,6 @@ public class ContactsFragment extends Fragment implements ContactsAdapter.OnPhon
     private ArrayList<ContactsModule> filterList;
     private RecyclerView recyclerView;
     private ContactsAdapter myAdapter;
-    private String contactNumber;
 
     public ContactsFragment() {
         // Required empty public constructor
@@ -71,7 +71,7 @@ public class ContactsFragment extends Fragment implements ContactsAdapter.OnPhon
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(requireContext()));
 
-        myAdapter = new ContactsAdapter(requireContext(), contactsList, recyclerView);
+        myAdapter = new ContactsAdapter(requireContext(), contactsList, recyclerView, false);
         recyclerView.setAdapter(myAdapter);
 
         Log.d("CreateView", "Create view is called");
@@ -226,24 +226,27 @@ public class ContactsFragment extends Fragment implements ContactsAdapter.OnPhon
                 if (hasPhoneNumber > 0) {
                     int contactId = Integer.parseInt(cursor.getString(contactIdIndex));
                     String displayName = cursor.getString(displayNameIndex);
-                    Cursor phoneCursor = requireContext().getContentResolver().query(
-                            ContactsContract.CommonDataKinds.Phone.CONTENT_URI,
-                            null,
-                            ContactsContract.CommonDataKinds.Phone.CONTACT_ID + " =?",
-                            new String[]{String.valueOf(contactId)},
-                            null
-                    );
 
-                    if (phoneCursor != null && phoneCursor.moveToNext()) {
-                        int phoneNumberIndex = phoneCursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER);
-                        String phoneNumber = phoneCursor.getString(phoneNumberIndex);
-                        ContactsModule myContact = new ContactsModule(contactId, displayName, phoneNumber);
-                        contactsList.add(myContact);
+                    Uri contactUri = ContentUris.withAppendedId(ContactsContract.Contacts.CONTENT_URI, contactId);
+                    Uri photoUri = Uri.withAppendedPath(contactUri, ContactsContract.Contacts.Photo.CONTENT_DIRECTORY);
+                    Cursor photoCursor = requireContext().getContentResolver().query(
+                            photoUri,
+                            new String[]{ContactsContract.Contacts.Photo.PHOTO}, null, null, null);
+                    byte[] photoData = null;
+                    if (photoCursor != null && photoCursor.moveToFirst()) {
+                        photoData = photoCursor.getBlob(0);
                     }
-                    phoneCursor.close();
+                    if (photoCursor != null) {
+                        photoCursor.close();
+                    }
+
+                    String phoneNumber = getPhoneNumber(contactId);
+
+                    ContactsModule myContact = new ContactsModule(contactId, displayName, phoneNumber, photoData);
+                    contactsList.add(myContact);
                 }
             }
-            myAdapter = new ContactsAdapter(requireContext(), contactsList, recyclerView);
+            myAdapter = new ContactsAdapter(requireContext(), contactsList, recyclerView, false);
             recyclerView.setAdapter(myAdapter);
             myAdapter.notifyDataSetChanged();
         }
@@ -254,6 +257,29 @@ public class ContactsFragment extends Fragment implements ContactsAdapter.OnPhon
         if (cursor != null) {
             cursor.close();
         }
+    }
+
+    private String getPhoneNumber(int contactId) {
+        Cursor phoneCursor = requireContext().getContentResolver().query(
+                ContactsContract.CommonDataKinds.Phone.CONTENT_URI,
+                null,
+                ContactsContract.CommonDataKinds.Phone.CONTACT_ID + " =?",
+                new String[]{String.valueOf(contactId)},
+                null
+        );
+
+        if (phoneCursor != null && phoneCursor.moveToNext()) {
+            int phoneNumberIndex = phoneCursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER);
+            String phoneNumber = phoneCursor.getString(phoneNumberIndex);
+            phoneCursor.close();
+            return phoneNumber;
+        }
+
+        if (phoneCursor != null) {
+            phoneCursor.close();
+        }
+
+        return "";
     }
 
     @Override
