@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:background="#2E2C2C"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:padding="15dp">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -27,9 +28,19 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
+            <ImageView
+                android:id="@+id/isfj"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:padding="16dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/isfj" />
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:gravity="center"
                 android:text="  이 성격 유형에게 예상치 못한 선물을 제공하는 것은 위험할 수 있습니다. 일반적으로 이 분들은 자신이 잘 알고 사랑하는 것에 더 집중하는 것을 선호합니다. 특히 다른 어떤 유형보다 좋은 곳에서 시간을 보내는 것을 선호합니다. 호캉스를 가거나 멋진 식사, 편안한 저녁을 함께 보내는 것도 좋아할 수 있습니다. 또한 대부분 검소한 성격이므로 단순히 값 비싼 선물은 깊은 인상을 주지 않을 수 있습니다. 직접 만든 선물처럼 무언가를 만드는데 필요한 시간과 노력을 높이 평가합니다. 이 분한테는 따뜻하고 사려 깊은 선물을 추천드립니다."
                 android:textColor="@color/white"
                 android:textSize="18sp"
@@ -38,6 +49,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:gravity="center"
                 android:text="&lt;선물 추천&gt; #퀄리티 있는 시간 #시간과 노력
 \n\n 손작업으로 만든 예쁜 카드나 인형,향기로운 캔들 세트,그들의 관심사에 맞는 책 또는 DIY 키트 등이 좋겠어요.
 손수건, 향초, 사진앨범, 커스텀 주얼리,
@@ -50,7 +62,8 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="1.선물용 시계"
+                android:gravity="center"
+                android:text="&quot;선물용 시계&quot;"
                 android:textColor="@color/white"
                 android:textSize="18sp"
                 android:padding="16dp" />
@@ -68,7 +81,8 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="2.향초"
+                android:gravity="center"
+                android:text="&quot;향초&quot;"
                 android:textColor="@color/white"
                 android:textSize="18sp"
                 android:padding="16dp" />
@@ -85,7 +99,8 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="3.편지"
+                android:gravity="center"
+                android:text="&quot;편지&quot;"
                 android:textColor="@color/white"
                 android:textSize="18sp"
                 android:padding="16dp" />

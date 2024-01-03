@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:background="#2E2C2C"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:padding="15dp">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -27,9 +28,19 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
+            <ImageView
+                android:id="@+id/infj"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:padding="16dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/infj" />
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:gravity="center"
                 android:text="이 성격에게 가장 중요한 것은 휴식, 휴일이라고 말합니다. 이들에게 최고의 선물은 화려한 포장이나 비싼 물건이 아닌, 가장 많은 생각과 관심을 가지고 주는 것입니다. 이 유형의 사람들은 독서를 좋아할 가능성이 높은 유형입니다. 관심있게 읽은 책을 찾아 보는 것을 추천합니다. 그 책에 관련된 굿즈를 발견할 수 있습니다. 시간을 내어 선물과 함께 마음이 담긴 글을 적어 카드와 함꼐 선물 한는 것을 추천합니다. 이들에겐 큰 의미가 될 수 있습니다.
 이 분 한테는 감성적이고 의미있는 선물을 추천드립니다."
                 android:textColor="@color/white"
@@ -39,6 +50,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:gravity="center"
                 android:text="&lt;선물 추천&gt; #독서관련 #마음이 담긴 카드
 \n\n 감성적인 시나 고전 문학 작품집,예술적이고 고요한 장소에서의 체험,
 깊은 대화를 나눌 수 있는 책 또는 카페 상품 등이 좋겠어요.
@@ -53,7 +65,8 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="1.명작 소설책"
+                android:gravity="center"
+                android:text="&quot;명작 소설책&quot;"
                 android:textColor="@color/white"
                 android:textSize="18sp"
                 android:padding="16dp" />
@@ -71,7 +84,8 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="2.커피"
+                android:gravity="center"
+                android:text="&quot;커피&quot;"
                 android:textColor="@color/white"
                 android:textSize="18sp"
                 android:padding="16dp" />
@@ -88,7 +102,8 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="3.플래너"
+                android:gravity="center"
+                android:text="&quot;플래너&quot;"
                 android:textColor="@color/white"
                 android:textSize="18sp"
                 android:padding="16dp" />

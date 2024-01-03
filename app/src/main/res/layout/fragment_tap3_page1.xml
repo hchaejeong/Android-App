@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".fragments.Tap3_Page1Fragment">
+    tools:context=".fragments.Tap3_Page1Fragment"
+    android:padding="25dp">
 
     <TextView
         android:id="@+id/ei_check"
@@ -22,6 +23,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="평소 주변정리나 일정 관리를 잘 하는 편인가요?"
+        android:gravity="center"
         android:textColor="@color/white"
         android:textSize="18sp"
         android:textStyle="bold"
@@ -57,6 +59,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="현실과 동떨어진 얘기를 하는 것에 관심이 있나요?"
+        android:gravity="center"
         android:textColor="@color/white"
         android:layout_marginTop="16dp"
         android:textSize="18sp"
@@ -91,6 +94,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="회사일이나 공부를 할때 예외상황이 생기는 것을 극도로 싫어하나요?"
+        android:gravity="center"
         android:textColor="@color/white"
         android:layout_marginTop="16dp"
         android:textSize="18sp"
@@ -143,6 +147,12 @@
             android:layout_weight="1"
             android:text="다음" />
 
+
+
+
+
     </LinearLayout>
+
+
 
 </LinearLayout>

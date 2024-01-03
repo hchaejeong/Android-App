@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:background="#2E2C2C"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:padding="15dp">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -27,9 +28,19 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
+            <ImageView
+                android:id="@+id/infp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:padding="16dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/infp" />
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:gravity="center"
                 android:text="  이 성격은 선물에 감긴 마음에 진심을 다해 감사하게 느끼는 사람입니다. 다른 유형보다 받은 선물을 쉽게 버리지 못하므로, 사용하고 즐길 수 있는 물건을 사주는 것이 좋습니다. 이들은 의외로 삶의 스트레스를 효과적으로 관리하기 어려워합니다. 스트레스를 완화시켜줄 수 있는 것을 제공하도록 해야합니다. 창의적인 것에 마음을 가지고 있지만, 안타깝게도 일상 생활의 현실이 방해가 될 수 있습니다. 창의적인 활동이 가능한 것을 선물하면 흥미를 되찾고 자존감을 높일 수 있습니다. 이 분 한테는 창의력을 자극하는 아이템을 추천합니다."
                 android:textColor="@color/white"
                 android:textSize="18sp"
@@ -38,6 +49,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:gravity="center"
                 android:text="&lt;선물 추천&gt; #스트레스 해소 #창의적 활동
 \n\n 진지한 감정을 표현할 수 있는 편지나 카드,창의적인 저작물을 담은 소재 (예: 수제 음악, 시),
 그들의 관심사에 맞는 독특한 아이템 등이 좋겠어요.
@@ -51,7 +63,8 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="1.소설책"
+                android:gravity="center"
+                android:text="&quot;소설책&quot;"
                 android:textColor="@color/white"
                 android:textSize="18sp"
                 android:padding="16dp" />
@@ -69,7 +82,8 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="2.타로 카드"
+                android:gravity="center"
+                android:text="&quot;타로 카드&quot;"
                 android:textColor="@color/white"
                 android:textSize="18sp"
                 android:padding="16dp" />
@@ -86,7 +100,8 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="3.꽃다발"
+                android:gravity="center"
+                android:text="&quot;꽃다발&quot;"
                 android:textColor="@color/white"
                 android:textSize="18sp"
                 android:padding="16dp" />

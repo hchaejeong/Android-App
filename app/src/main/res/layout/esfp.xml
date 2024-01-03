@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:background="#2E2C2C"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:padding="15dp">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -27,9 +28,19 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
+            <ImageView
+                android:id="@+id/esfp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:padding="16dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/esfp" />
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:gravity="center"
                 android:text="  이 성격의 사람은 재미와 설렘을 좋아합니다. 모험심 넘치는 스타일과 독특한 감각에 맞는 선물을 고를 때 최고의 선물이 될 것입니다. 함꼐 즐거운 저녁을 보내는 것을 너무 좋아합니다. 좋아하는 노래나 춤을 추거나, 좋아하는 공연 콘서트 티켓을 주는 것도 좋은 선물이 될 것입니다. 오픈 하면서 신선함을 느낄 수 있는 특이한 디자인의 선물 등 다른 사람이 많이 가지지 않은 신상품이나 유니크한 제품을 찾아 보는 것도 좋습니다. 이 분에게는 다양한 체험권과 장식 아이템을 추천합니다."
                 android:textColor="@color/white"
                 android:textSize="18sp"
@@ -38,6 +49,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:gravity="center"
                 android:text="&lt;선물 추천&gt; #즐거움 #최신 유행 템
 \n\n 콘서트 티켓이나 음악 이벤트 입장권,함께 즐길 수 있는 다양한 액티비티,
 화려하고 유쾌한 데코 아이템 등이 좋겠어요.
@@ -51,7 +63,8 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="1.빗"
+                android:gravity="center"
+                android:text="&quot;빗&quot;"
                 android:textColor="@color/white"
                 android:textSize="18sp"
                 android:padding="16dp" />
@@ -69,7 +82,8 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="2.공연티켓"
+                android:gravity="center"
+                android:text="&quot;공연티켓&quot;"
                 android:textColor="@color/white"
                 android:textSize="18sp"
                 android:padding="16dp" />
@@ -86,7 +100,8 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="3.인테리어 소품"
+                android:gravity="center"
+                android:text="&quot;인테리어 소품&quot;"
                 android:textColor="@color/white"
                 android:textSize="18sp"
                 android:padding="16dp" />

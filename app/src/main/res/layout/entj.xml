@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:background="#2E2C2C"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:padding="15dp">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -26,10 +27,19 @@
                 android:textSize="20sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
+            <ImageView
+                android:id="@+id/entj"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:padding="16dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/entj" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:gravity="center"
                 android:text="  이 성격을 가진 상대방의 선물 쇼핑은 꽤 하기 어려울 수 있습니다. 냉철한 스타일로 좋아하지 않는 선물을 받게 되면 리액션 연기는 당연히 없습니다. 그러나 다행히 이들이 좋아하는 것이 무엇인지 세심하게 관찰하면 진짜 리액션을 볼 수 있는 선물들을 찾을 수 있습니다. 함께 양질의 시간을 즐기는 것을 좋아하는데, 그 장소는 자신의 취향에 어울릴 때 정말 감사함을 표현할 것입니다. 그들이 좋아하는 글귀나 디자인이 있다면 그걸 이용해서 제작된 선물이 일반 기성품보다 더 매력적으로 느끼게 됩니다. 또한 이들은 많은 양의 쓸데없는 선물보다 퀄리티 있는 선물을 좋아합니다. 이 분에게는 개인적이고 의미 있는 선물을 추천합니다."
                 android:textColor="@color/white"
                 android:textSize="18sp"
@@ -38,6 +48,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:gravity="center"
                 android:text="&lt;선물 추천&gt; #취향에 맞는 곳 #맞춤형 #양보다 질
 \n\n 리더십 훈련이나 경영 교육 참여 기회,혁신적인 비즈니스 도서,
 성공적인 경력을 위한 기능적인 사무용품 등이 좋겠어요.
@@ -52,7 +63,8 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="1. 자기계발 책"
+                android:gravity="center"
+                android:text="&quot;자기계발 책&quot;"
                 android:textColor="@color/white"
                 android:textSize="18sp"
                 android:padding="16dp" />
@@ -70,7 +82,8 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="2.보드게임"
+                android:gravity="center"
+                android:text="&quot;보드게임&quot;"
                 android:textColor="@color/white"
                 android:textSize="18sp"
                 android:padding="16dp" />
@@ -87,7 +100,8 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="3.만년필"
+                android:gravity="center"
+                android:text="&quot;만년필&quot;"
                 android:textColor="@color/white"
                 android:textSize="18sp"
                 android:padding="16dp" />

@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="fragments.Tap3_Page4Fragment">
+    tools:context="fragments.Tap3_Page4Fragment"
+    android:padding="25dp">
 
     <TextView
         android:id="@+id/ei_check"
@@ -22,6 +23,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="MBTI 얘기가 나오면 관심있어하고 재미있어 하나요?"
+        android:gravity="center"
         android:textColor="@color/white"
         android:textSize="18sp"
         android:textStyle="bold"
@@ -57,6 +59,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="누군가 어려움이 처하면 위로보다 해결방안을 제시하나요?"
+        android:gravity="center"
         android:textColor="@color/white"
         android:layout_marginTop="16dp"
         android:textSize="18sp"
@@ -91,6 +94,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="(선물을 받는 상대와) 친해지는데 시간이 좀 걸렸나요?"
+        android:gravity="center"
         android:textColor="@color/white"
         android:layout_marginTop="16dp"
         android:textSize="18sp"
@@ -141,7 +145,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="다음" />
+            android:text="결과보기" />
 
     </LinearLayout>
 </LinearLayout>

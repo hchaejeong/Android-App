@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="fragments.Tap3_Page3Fragment">
+    tools:context="fragments.Tap3_Page3Fragment"
+    android:padding="25dp">
 
     <TextView
         android:id="@+id/ei_check"
@@ -22,6 +23,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="평소에 걱정을 많이 하는 편인가요?"
+        android:gravity="center"
         android:textColor="@color/white"
         android:textSize="18sp"
         android:textStyle="bold"
@@ -57,6 +59,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="휴식 시간에 주로 혼자 보내는 것을 좋아하는 것 같나요?"
+        android:gravity="center"
         android:textColor="@color/white"
         android:layout_marginTop="16dp"
         android:textSize="18sp"
@@ -91,6 +94,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="감정에 잘 휘둘리는 편인가요?"
+        android:gravity="center"
         android:textColor="@color/white"
         android:layout_marginTop="16dp"
         android:textSize="18sp"

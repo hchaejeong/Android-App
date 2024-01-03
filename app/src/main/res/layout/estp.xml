@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:background="#2E2C2C"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:padding="15dp">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -27,9 +28,19 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
+            <ImageView
+                android:id="@+id/estp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:padding="16dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/estp" />
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:gravity="center"
                 android:text="  이 성격의 유형은 활기차고 자발적인 성격의 소유자로 경험을 선물로 받는 것을 좋아합니다. 재미있는 곳을 함께 가거나 특별한 음식이나 음료와 같은 새로운 경험 주는 선물을 보내도 좋습니다. 스포츠를 좋아할 가능성이 높은 성격 유형으로 관심 있어 하는 스포츠를 같이 하거나 볼 수 있는 곳에 데려가는 것을 추천합니다. 비슷한 맥락으로 아드레날린이 넘칠 수 있는 활동을 즐겨 시도할 수 있는 곳에 데려 가는  것을 추천합니다. 이미 하고 있다면 관련 장비를 선물 하는 것도 좋습니다. 이 분에게는 활력 넘치는 경기 및 액션 기반 상황 아이템을 추천합니다."
                 android:textColor="@color/white"
                 android:textSize="18sp"
@@ -38,6 +49,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:gravity="center"
                 android:text="&lt;선물 추천&gt; # 스포츠 경기 #흥분을 추구 #탐험
 \n\n 액티비티 기프트 카드 (스카이다이빙, 래프팅, 등),스포츠용품이나 운동장비,
 다이닝 경험을 선물하는 레스토랑 상품권 등이 좋겠어요.
@@ -51,7 +63,8 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="1.보드게임"
+                android:gravity="center"
+                android:text="&quot;보드게임&quot;"
                 android:textColor="@color/white"
                 android:textSize="18sp"
                 android:padding="16dp" />
@@ -69,7 +82,8 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="2.자전거 악세서리"
+                android:text="&quot;자전거 악세서리&quot;"
+                android:gravity="center"
                 android:textColor="@color/white"
                 android:textSize="18sp"
                 android:padding="16dp" />
@@ -86,7 +100,8 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="3.패션 아이템"
+                android:gravity="center"
+                android:text="&quot;패션 아이템&quot;"
                 android:textColor="@color/white"
                 android:textSize="18sp"
                 android:padding="16dp" />
@@ -103,6 +118,7 @@
                 android:id="@+id/return_home_btn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:gravity="center"
                 android:text="처음으로"
                 android:textColor="@color/white"
                 app:layout_constraintEnd_toEndOf="parent"

@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".fragments.Tap3_Page2Fragment">
+    tools:context=".fragments.Tap3_Page2Fragment"
+    android:padding="25dp">
 
     <TextView
         android:id="@+id/ei_check"
@@ -22,6 +23,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="공감을 잘하는 편인가요?"
+        android:gravity="center"
         android:textColor="@color/white"
         android:textSize="18sp"
         android:textStyle="bold"
@@ -57,6 +59,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="해야할 일을 주로 미루는 편인가요?"
+        android:gravity="center"
         android:textColor="@color/white"
         android:layout_marginTop="16dp"
         android:textSize="18sp"
@@ -91,6 +94,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="먼저 약속을 잡는 편인가요? "
+        android:gravity="center"
         android:textColor="@color/white"
         android:layout_marginTop="16dp"
         android:textSize="18sp"

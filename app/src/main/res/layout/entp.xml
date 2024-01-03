@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:background="#2E2C2C"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:padding="15dp">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -27,9 +28,19 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
+            <ImageView
+                android:id="@+id/entp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:padding="16dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/entp" />
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:gravity="center"
                 android:text="  이 성격의 유형은 극단적인 것을 즐기는 경향이 있음을 기억해야 합니다. 강렬한 맛, 아드레날린 분출이 가득한 곳 등 극단적인 경험을 추구합니다. 아무나 즐기지 못하는 독특한 것이 이들에겐 중요합니다. 그래서 한 번도 가본 적이 없는 곳으로 데려가 기억에 남고 흥미진진한 경험을 만들어 줘야 합니다. 남들도 다 아는 것, 이미 예상이 되는 물건보다 사람들이 잘 모르거나 예측 되지 않는 경험을 주는 선물을 추천합니다. 상품권이나 현금도 좋은 선택지가 될 수 있습니다. 성의없는 건 아닐까 걱정할 필요 없습니다. 자신이 좋아하는 것에 쓸 수 있게 받는 상품권, 현금을 더 편안해 합니다. 이 분에게는 도전과 탐험 정신을 격려하는 아이템을 추천합니다."
                 android:textColor="@color/white"
                 android:textSize="18sp"
@@ -38,6 +49,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:gravity="center"
                 android:text="&lt;선물 추천&gt; #새로운 경험 #독특한 것 #상품권,현금
 \n\n 토론 또는 논쟁 주제를 다루는 책,미스터리 퍼즐 게임이나 이스케이퍼 룸 티켓,
 첨단 기술 장비나 독특한 도구 등이 좋겠어요.
@@ -51,7 +63,8 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="1.자기계발 책"
+                android:gravity="center"
+                android:text="&quot;자기계발 책&quot;"
                 android:textColor="@color/white"
                 android:textSize="18sp"
                 android:padding="16dp" />
@@ -69,7 +82,8 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="2.트랜디한 셔츠"
+                android:gravity="center"
+                android:text="&quot;트랜디한 셔츠&quot;"
                 android:textColor="@color/white"
                 android:textSize="18sp"
                 android:padding="16dp" />
@@ -86,7 +100,8 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="3.ABC 마트 기프트 카드"
+                android:gravity="center"
+                android:text="&quot;ABC 마트 기프트 카드&quot;"
                 android:textColor="@color/white"
                 android:textSize="18sp"
                 android:padding="16dp" />
@@ -103,6 +118,7 @@
                 android:id="@+id/return_home_btn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:gravity="center"
                 android:text="처음으로"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
