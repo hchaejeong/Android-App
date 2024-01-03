@@ -34,6 +34,10 @@ This tab simulates the gallery application of an Android phone by loading, addin
  - Clicking on an image will redirect us to a detailed view of the selected image. We can zoom in or zoom out using finger gestures, or view the images with different color filters ( as a black and white image, original color image, or image that has been brightened).
  - In order to add a new image by taking a photo, we can click on the bottom right camera button. This will automatically launch the Camera application of the phone and allow us to take a picture. Once we confirm to use this picture, we will be redirected back to the main page showing all images. This photo is automatically be added to our phone storage and displayed.
 
+|Photoshop|Take Photo and Add To Gallery|
+|------|----|
+|![](https://github.com/hchaejeong/My-Santa/assets/154505487/f45e3e2f-618c-4145-a508-7cbd43fc50e1.gif)||
+
 <p align="center">
   <img width="20%"src="https://github.com/hchaejeong/My-Santa/assets/154505487/f45e3e2f-618c-4145-a508-7cbd43fc50e1.gif" />
 </p>
