@@ -38,9 +38,6 @@ This tab simulates the gallery application of an Android phone by loading, addin
 |------|----|
 |![](https://github.com/hchaejeong/My-Santa/assets/154505487/f45e3e2f-618c-4145-a508-7cbd43fc50e1.gif)||
 
-<p align="center">
-  <img width="20%"src="https://github.com/hchaejeong/My-Santa/assets/154505487/f45e3e2f-618c-4145-a508-7cbd43fc50e1.gif" />
-</p>
 
 ### Tab 3: PresentAdvisor Page
 This tab recommends gifts to give to others by asking simple questions.
