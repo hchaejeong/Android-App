@@ -1,5 +1,6 @@
 package com.example.myapplication.fragments;
 
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
@@ -26,6 +27,7 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.provider.ContactsContract;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import android.content.pm.PackageManager;
@@ -42,11 +44,12 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 
-public class ContactsFragment extends Fragment {
+public class ContactsFragment extends Fragment implements ContactsAdapter.OnPhoneIconClickListener, ContactsAdapter.OnMessageIconClickListener {
     private ArrayList<ContactsModule> contactsList;
     private ArrayList<ContactsModule> filterList;
     private RecyclerView recyclerView;
     private ContactsAdapter myAdapter;
+    private String contactNumber;
 
     public ContactsFragment() {
         // Required empty public constructor
@@ -115,6 +118,13 @@ public class ContactsFragment extends Fragment {
                     loadContacts();
                 }
             }
+            if (ContextCompat.checkSelfPermission(requireContext(), Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED &&
+                    ContextCompat.checkSelfPermission(requireContext(), Manifest.permission.SEND_SMS) != PackageManager.PERMISSION_GRANTED) {
+                ActivityCompat.requestPermissions(requireActivity(), new String[]{Manifest.permission.CALL_PHONE, Manifest.permission.SEND_SMS}, 102);
+            } else {
+                myAdapter.setOnPhoneIconClickListener(this);
+                myAdapter.setOnMessageIconClickListener(this);
+            }
         } else {
             loadContacts();
         }
@@ -156,6 +166,23 @@ public class ContactsFragment extends Fragment {
         super.onCreateOptionsMenu(menu, inflater);
     }
 
+    private void initiatePhoneCall(String phoneNumber) {
+        Intent callIntent = new Intent(Intent.ACTION_CALL);
+        callIntent.setData(Uri.parse("tel: " + phoneNumber));
+
+        if (ContextCompat.checkSelfPermission(requireContext(), Manifest.permission.CALL_PHONE) == PackageManager.PERMISSION_GRANTED) {
+            startActivity(callIntent);
+        } else {
+            ActivityCompat.requestPermissions(requireActivity(), new String[]{Manifest.permission.CALL_PHONE}, 102);
+        }
+    }
+
+    private void sendMessage(String phoneNumber) {
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("sms:" + phoneNumber));
+        intent.putExtra("sms_body", "");
+        startActivity(intent);
+    }
+
     private void filter(String text) {
         Log.d("Filter", "Filtering with text:" + text);
         ArrayList<ContactsModule> filteredlist = new ArrayList<>();
@@ -181,6 +208,8 @@ public class ContactsFragment extends Fragment {
             else {
                 Toast.makeText(requireContext(), "Permission Denied.", Toast.LENGTH_SHORT).show();
             }
+        } else if (requestCode == 101) {
+
         }
     }
 
@@ -227,4 +256,13 @@ public class ContactsFragment extends Fragment {
         }
     }
 
+    @Override
+    public void onPhoneIconClick(String phoneNumber) {
+        initiatePhoneCall(phoneNumber);
+    }
+
+    @Override
+    public void onMessageIconClick(String phoneNumber) {
+        sendMessage(phoneNumber);
+    }
 }

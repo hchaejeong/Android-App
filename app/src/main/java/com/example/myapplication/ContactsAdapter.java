@@ -130,62 +130,6 @@ public class ContactsAdapter extends RecyclerView.Adapter<ContactsAdapter.Contac
             deleteIcon.draw(c);
         }
     }
-    /*
-    private final ItemTouchHelper.Callback touchHelperCallback = new ItemTouchHelper.Callback() {
-        //private static final float SWIPE_THRESHOLD = 0.15f;
-        @Override
-        public int getMovementFlags(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder) {
-            int swipeFlags = ItemTouchHelper.RIGHT;
-            return makeMovementFlags(0, swipeFlags);
-        }
-
-        @Override
-        public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder target) {
-            return false;
-        }
-
-        @Override
-        public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
-            int position = viewHolder.getAbsoluteAdapterPosition();
-
-            if (position >= 0 && position < contactsArrayList.size()) {
-                ContactsModule contactToDelete = contactsArrayList.get(position);
-                removeContact(contactToDelete);
-                notifyItemRemoved(position);
-            } else {
-                Log.e("ContactsAdapter", "Invalid position: " + position);
-            }
-        }
-
-        @Override
-        public void onChildDraw(@NonNull Canvas c, @NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, float dX, float dY, int actionState, boolean isCurrentlyActive) {
-            if (actionState == ItemTouchHelper.ACTION_STATE_SWIPE) {
-                View itemView = viewHolder.itemView;
-                float width = (float) itemView.getWidth();
-                //float alpha = 1.0f - Math.abs(dX) / width;
-
-                Paint paint = new Paint();
-                paint.setColor(Color.RED);
-                //paint.setAlpha((int) (alpha * 255));
-                c.drawRect((float) itemView.getLeft(), (float) itemView.getTop(), (float) itemView.getLeft() + dX, (float) itemView.getBottom(), paint);
-
-                Drawable deleteIcon = ContextCompat.getDrawable(context, R.drawable.baseline_delete_24);
-                if (deleteIcon != null) {
-                    int iconTop = itemView.getTop() + (itemView.getHeight() - deleteIcon.getIntrinsicHeight()) / 2;
-                    int iconBottom = iconTop + deleteIcon.getIntrinsicHeight();
-
-                    float iconPosition = Math.min(dX / 2, width / 2);
-                    int iconLeft = (int) (itemView.getLeft() + iconPosition);
-                    int iconRight = iconLeft + deleteIcon.getIntrinsicWidth();
-                    deleteIcon.setBounds(iconLeft, iconTop, iconRight, iconBottom);
-                    deleteIcon.draw(c);
-                }
-            }
-            super.onChildDraw(c, recyclerView, viewHolder, dX, dY, actionState, isCurrentlyActive);
-        }
-    };
-
-     */
 
     @Override
     public void onBindViewHolder(ContactsViewHolder holder, int position) {
@@ -202,6 +146,26 @@ public class ContactsAdapter extends RecyclerView.Adapter<ContactsAdapter.Contac
         });
     }
 
+    public interface OnPhoneIconClickListener {
+        void onPhoneIconClick(String phoneNumber);
+    }
+
+    private OnPhoneIconClickListener phoneIconClickListener;
+
+    public void setOnPhoneIconClickListener(OnPhoneIconClickListener listener) {
+        this.phoneIconClickListener = listener;
+    }
+
+    public interface OnMessageIconClickListener {
+        void onMessageIconClick(String phoneNumber);
+    }
+
+    private OnMessageIconClickListener messageIconClickListener;
+
+    public void setOnMessageIconClickListener(OnMessageIconClickListener listener) {
+        this.messageIconClickListener = listener;
+    }
+
     @Override
     public int getItemCount() {
         return contactsArrayList.size();
@@ -210,11 +174,40 @@ public class ContactsAdapter extends RecyclerView.Adapter<ContactsAdapter.Contac
     public class ContactsViewHolder extends RecyclerView.ViewHolder {
         private ImageView contactImage;
         private TextView contactName;
+        private ImageView phoneIcon, messageIcon;
 
         public ContactsViewHolder(@NonNull View itemView) {
             super(itemView);
             contactImage = itemView.findViewById(R.id.idIVContact);
             contactName = itemView.findViewById(R.id.idTVContactName);
+            phoneIcon = itemView.findViewById(R.id.idIVPhoneIcon);
+            messageIcon = itemView.findViewById(R.id.idIVMessageIcon);
+
+            phoneIcon.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (phoneIconClickListener != null) {
+                        int position = getAdapterPosition();
+                        if (position != RecyclerView.NO_POSITION) {
+                            ContactsModule contact = contactsArrayList.get(position);
+                            phoneIconClickListener.onPhoneIconClick(contact.getContactNumber());
+                        }
+                    }
+                }
+            });
+
+            messageIcon.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (messageIconClickListener != null) {
+                        int position = getAdapterPosition();
+                        if (position != RecyclerView.NO_POSITION) {
+                            ContactsModule contact = contactsArrayList.get(position);
+                            messageIconClickListener.onMessageIconClick(contact.getContactNumber());
+                        }
+                    }
+                }
+            });
         }
     }
 }
