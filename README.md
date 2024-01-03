@@ -19,11 +19,20 @@ This tab simulates the contacts application of the Android phone by loading, add
  - Each contact can be removed and deleted from the actual phone Contacts storage by simply swiping to the right.
  - We can add a contact by clicking the bottom right + button. This will add the contact directly to our actual phone Contacts.
 
+<p align="center">
+  <img width="20%"src="https://github.com/hchaejeong/Madcamp_AndroidApp/assets/154505487/d17b2b26-7a35-408f-be2d-e259279efdad.gif" />
+  <img width="20%"src="https://github.com/hchaejeong/Madcamp_AndroidApp/assets/154505487/237b32d1-5ecb-4a65-bd90-c16d8f4782d1.gif" />
+</p>
+
 ### Tab 2: Gallery Page
 This tab simulates the gallery application of an Android phone by loading, adding, viewing, and applying color filters for the images stored in the actual phone.
  - When the Gallery tab is selected, we see a list of all images retrieved from the actual phone storage in the order of the most recently taken photo.
  - Clicking on an image will redirect us to a detailed view of the selected image. We can zoom in or zoom out using finger gestures, or view the images with different color filters ( as a black and white image, original color image, or image that has been brightened).
  - In order to add a new image by taking a photo, we can click on the bottom right camera button. This will automatically launch the Camera application of the phone and allow us to take a picture. Once we confirm to use this picture, we will be redirected back to the main page showing all images. This photo is automatically be added to our phone storage and displayed.
+
+<p align="center">
+  <img width="20%"src="https://github.com/hchaejeong/Madcamp_AndroidApp/assets/154505487/5567454e-1766-47b6-82bc-a244bc8276ea.gif" />
+</p>
 
 ### Tab 3: PresentAdvisor Page
 This tab recommends gifts to give to others by asking simple questions.
