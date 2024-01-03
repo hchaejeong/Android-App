@@ -1,4 +1,4 @@
-# APP NAME
+# 🎅 My Santa
 > ### Contributor: Chaejeong Hyun, Hyeonseo Yun
 > 🕰️ 2023.12.28 ~ 2024.01.03 <br />
 *2023 Winter Madcamp Project* <br/>
