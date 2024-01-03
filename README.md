@@ -28,7 +28,7 @@ This tab simulates the gallery application of an Android phone by loading, addin
 ### Tab 3: PresentAdvisor Page
 This tab recommends gifts to give to others by asking simple questions.
  - When you click on the radiobuttons for the question in each fragment, you move to the fragment corresponding to the clicked result on the final screen.
- - If any of -the radiobuttons on the current page is unchecked, a warning message is displayed instead of moving to the next fragment.
+ - If any of the radiobuttons on the current page is unchecked, a warning message is displayed instead of moving to the next fragment.
  - When conducting a survey, press the next button to move to the next fragment and maintain the previous checked state when returning to the previous fragment. 
  - When you press the "Start" button on the initial screen, all radio buttons are unchecked.
  - Clicking on the gift photo on the results screen took you to the page where you searched for that product on Coupang APP.
