@@ -4,6 +4,8 @@ import android.content.ContentResolver;
 import android.content.ContentUris;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
@@ -11,6 +13,7 @@ import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.provider.ContactsContract;
 import android.util.Log;
+import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,6 +30,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.snackbar.Snackbar;
 
+import java.io.InputStream;
 import java.util.ArrayList;
 
 public class ContactsAdapter extends RecyclerView.Adapter<ContactsAdapter.ContactsViewHolder> {
@@ -34,12 +38,14 @@ public class ContactsAdapter extends RecyclerView.Adapter<ContactsAdapter.Contac
     private Context context;
     private ArrayList<ContactsModule> contactsArrayList;
     private RecyclerView recyclerView;
+    private boolean isViewContactDetails;
 
     //creating a constructor.
-    public ContactsAdapter(Context context, ArrayList<ContactsModule> arrayList, RecyclerView recyclerView) {
+    public ContactsAdapter(Context context, ArrayList<ContactsModule> arrayList, RecyclerView recyclerView, boolean isViewContactDetails) {
         this.context = context;
         this.contactsArrayList = arrayList;
         this.recyclerView = recyclerView;
+        this.isViewContactDetails = isViewContactDetails;
     }
 
     @Override
@@ -135,6 +141,20 @@ public class ContactsAdapter extends RecyclerView.Adapter<ContactsAdapter.Contac
     public void onBindViewHolder(ContactsViewHolder holder, int position) {
         ContactsModule myContact = contactsArrayList.get(position);
         holder.contactName.setText(myContact.getName());
+
+        Bitmap contactPhoto = loadContactPhoto(myContact.getId(), context);
+        if (contactPhoto != null) {
+            holder.contactImage.setImageBitmap(contactPhoto);
+        } else {
+            Bitmap defaultIconBitmap = BitmapFactory.decodeResource(context.getResources(), R.drawable.baseline_account_circle_24);
+            if (defaultIconBitmap != null) {
+                int desiredSizeInDp = 300;
+                int desiredSizeInPx = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, desiredSizeInDp, context.getResources().getDisplayMetrics());
+                Bitmap scaledDefaultIconBitmap = Bitmap.createScaledBitmap(defaultIconBitmap, desiredSizeInPx, desiredSizeInPx, true);
+                holder.contactImage.setImageBitmap(scaledDefaultIconBitmap);
+            }
+        }
+
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -144,6 +164,17 @@ public class ContactsAdapter extends RecyclerView.Adapter<ContactsAdapter.Contac
                 context.startActivity(i);
             }
         });
+    }
+
+    private Bitmap loadContactPhoto(int contactId, Context context) {
+        ContentResolver contentResolver = context.getContentResolver();
+        Uri contactUri = ContentUris.withAppendedId(ContactsContract.Contacts.CONTENT_URI, contactId);
+        InputStream inputStream = ContactsContract.Contacts.openContactPhotoInputStream(contentResolver, contactUri);
+
+        if (inputStream != null) {
+            return BitmapFactory.decodeStream(inputStream);
+        }
+        return null;
     }
 
     public interface OnPhoneIconClickListener {
