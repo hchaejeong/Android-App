@@ -20,8 +20,11 @@ This tab simulates the contacts application of the Android phone by loading, add
  - We can add a contact by clicking the bottom right + button. This will add the contact directly to our actual phone Contacts.
 
 <p align="center">
-  <img width="20%"src="https://github.com/hchaejeong/Madcamp_AndroidApp/assets/154505487/d17b2b26-7a35-408f-be2d-e259279efdad.gif" />
-  <img width="20%"src="https://github.com/hchaejeong/Madcamp_AndroidApp/assets/154505487/237b32d1-5ecb-4a65-bd90-c16d8f4782d1.gif" />
+  <img width="20%"src="https://github.com/hchaejeong/My-Santa/assets/154505487/5e2bc6c0-38a9-4a4e-aff5-22e9383606fb.gif" />
+  <img width="20%"src="https://github.com/hchaejeong/My-Santa/assets/154505487/faf5c38c-dda9-489a-9f7f-e2acaf2b1c68.gif" />
+  <img width="20%"src="https://github.com/hchaejeong/My-Santa/assets/154505487/dc99ef99-c342-41fc-97a3-61d58295e200.gif" />
+  <img width="20%"src="https://github.com/hchaejeong/My-Santa/assets/154505487/f7217017-e339-4d8c-a9f8-a9541d12cd44.gif" />
+  <img width="20%"src="https://github.com/hchaejeong/My-Santa/assets/154505487/f7217017-e339-4d8c-a9f8-a9541d12cd44.gif" />
 </p>
 
 ### Tab 2: Gallery Page
@@ -31,7 +34,7 @@ This tab simulates the gallery application of an Android phone by loading, addin
  - In order to add a new image by taking a photo, we can click on the bottom right camera button. This will automatically launch the Camera application of the phone and allow us to take a picture. Once we confirm to use this picture, we will be redirected back to the main page showing all images. This photo is automatically be added to our phone storage and displayed.
 
 <p align="center">
-  <img width="20%"src="https://github.com/hchaejeong/Madcamp_AndroidApp/assets/154505487/5567454e-1766-47b6-82bc-a244bc8276ea.gif" />
+  <img width="20%"src="https://github.com/hchaejeong/My-Santa/assets/154505487/f45e3e2f-618c-4145-a508-7cbd43fc50e1.gif" />
 </p>
 
 ### Tab 3: PresentAdvisor Page
