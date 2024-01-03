@@ -38,18 +38,20 @@
             android:textSize="20sp" />
 
         <ImageView
+            android:id="@+id/idIVPhoneIcon"
             android:layout_width="35dp"
             android:layout_height="35dp"
-            android:layout_marginStart="235dp"
+            android:layout_marginStart="260dp"
             android:layout_centerVertical="true"
             android:layout_marginEnd="300dp"
             android:padding="4dp"
             android:src="@drawable/baseline_call_24" />
 
         <ImageView
+            android:id="@+id/idIVMessageIcon"
             android:layout_width="35dp"
             android:layout_height="35dp"
-            android:layout_marginStart="275dp"
+            android:layout_marginStart="300dp"
             android:layout_centerVertical="true"
             android:layout_marginEnd="300dp"
             android:padding="4dp"
