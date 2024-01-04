@@ -6,6 +6,9 @@
 ## 🖥 Project Introduction
 Our application consists of three tabs: contacts tab, gallery tab, and gift suggestion tab. 
 
+##  APK file - google drive
+https://drive.google.com/file/d/1111mZn4l887w45cRm7ax6TlmZ7ChXwsp/view?usp=sharing
+
 ## ⚙️ Environment
 <img src="https://img.shields.io/badge/AndroidStudio-3DDC84?style=for-the-badge&logo=AndroidStudio&logoColor=white"> <img src="https://img.shields.io/badge/Java-7F52FF?style=for-the-badge&logo=Java&logoColor=white"> ![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=Git&logoColor=white) ![Github](https://img.shields.io/badge/Github-181717?style=for-the-badge&logo=Github&logoColor=white) ![Notion](https://img.shields.io/badge/Notion-808080?style=for-the-badge&logo=Notion&logoColor=white)
 
